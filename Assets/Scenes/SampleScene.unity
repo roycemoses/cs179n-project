@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 292020610}
-  attackRate: 0.5
+  attackRate: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
