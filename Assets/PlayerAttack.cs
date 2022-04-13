@@ -6,12 +6,19 @@ public class PlayerAttack : MonoBehaviour
 {
     public Animator animator;
 
+    public float attackRate = 0.5f;
+    float nextAttackTime = 0f;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
