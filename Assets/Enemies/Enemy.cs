@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour//perhaps abstract
+public abstract class Enemy : MonoBehaviour//perhaps abstract
 {
 
-    public int health;
-    public int damage;
-    public int xp;
-    public int gold;
+    public virtual int health{get;} = 0;
+    public virtual int damage{get;} = 0;
+    public virtual int xp{get;} = 0;
+    public virtual int gold{get;} = 0;
     
     /*
     // Start is called before the first frame update
