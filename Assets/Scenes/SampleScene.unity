@@ -2318,6 +2318,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6207245791565696344, guid: 11c4abbe3a0344df2bb7b98d1dbf9e7d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6207245791565696346, guid: 11c4abbe3a0344df2bb7b98d1dbf9e7d, type: 3}
       propertyPath: m_Name
       value: Ogre
