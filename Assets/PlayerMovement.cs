@@ -22,49 +22,20 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if (movement.x == 1)
-        {
-            Debug.Log("right");
-            animator.SetBool("UserInput_D", true);
-        }
-        else
-        {
-            animator.SetBool("UserInput_D", false);
-        }
 
-        if (movement.x == -1)
+        if (movement != Vector2.zero)
         {
-            Debug.Log("left");
-            animator.SetBool("UserInput_A", true);
-        }
-        else
-        {
-            animator.SetBool("UserInput_A", false);
-        }
-
-        if (movement.y == 1)
-        {
-            Debug.Log("up");
-            animator.SetBool("UserInput_W", true);
-        }
-        else
-        {
-            animator.SetBool("UserInput_W", false);
-        }
-        
-        if (movement.y == -1)
-        {
-            Debug.Log("down");
-            animator.SetBool("UserInput_S", true);
-        }
-        else
-        {
-            animator.SetBool("UserInput_S", false);
+            animator.SetFloat("Xinput", movement.x);
+            animator.SetFloat("Yinput", movement.y);
         }
     }
     
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        if (movement != Vector2.zero)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
     }
 }
