@@ -489,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150707810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.04, y: -0.04, z: -10}
+  m_LocalPosition: {x: -2.34, y: -0.01, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1791397395}
   smoothing: 0.5
-  minPosition: {x: -2.04, y: 0.02, z: 0}
+  minPosition: {x: -2.34, y: 0.02, z: 0}
   maxPosition: {x: 15.02, y: 16.97, z: 0}
 --- !u!1 &185692917
 GameObject:
