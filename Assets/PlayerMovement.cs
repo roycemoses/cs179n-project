@@ -10,16 +10,33 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    private Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-    }
 
+        if (movement != Vector2.zero)
+        {
+            animator.SetFloat("Xinput", movement.x);
+            animator.SetFloat("Yinput", movement.y);
+        }
+    }
+    
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        if (movement != Vector2.zero)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
     }
 }
