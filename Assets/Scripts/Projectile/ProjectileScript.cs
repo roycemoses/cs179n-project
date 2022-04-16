@@ -10,7 +10,6 @@ public class ProjectileScript : MonoBehaviour
     {
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
-        Debug.Log(collision.collider);
         Destroy(gameObject);
     }
 }
