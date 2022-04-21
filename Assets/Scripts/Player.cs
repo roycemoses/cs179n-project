@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public int currHealth;
     public HealthBar healthBar;
+    public bool isDead = false;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,13 @@ public class Player : MonoBehaviour
     {
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
+        if (currHealth <= 0)
+            Respawn();
+    }
+
+    void Respawn()
+    {
+        this.gameObject.transform.position = this.spawnPoint.position;
+        this.currHealth = this.maxHealth;
     }
 }
