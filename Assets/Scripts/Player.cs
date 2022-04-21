@@ -22,6 +22,17 @@ public class Player : MonoBehaviour
         //We will be testing with the space key
         if (Input.GetKeyDown(KeyCode.Space))
             TakeDamage(20);
+        
+        if (isDead)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Respawn();
+                isDead = false;
+                gameObject.GetComponent<PlayerMovement>().enabled = true;
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
     }
 
     void TakeDamage(int damage)
@@ -29,7 +40,11 @@ public class Player : MonoBehaviour
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
         if (currHealth <= 0)
-            Respawn();
+        {
+            isDead = true;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     void Respawn()
