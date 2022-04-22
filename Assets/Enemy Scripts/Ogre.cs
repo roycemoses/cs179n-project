@@ -16,10 +16,10 @@ public class Ogre : Enemy
     void Start()
     {
         //debugs
-        print(this.health);
-        print(this.damage);
-        print(this.xp);
-        print(this.gold);
+        // print(this.health);
+        // print(this.damage);
+        // print(this.xp);
+        // print(this.gold);
     }
     /*
 
