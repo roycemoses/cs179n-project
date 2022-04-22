@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currHealth;
     public HealthBar healthBar;
+    public bool isDead = false;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +24,36 @@ public class Player : MonoBehaviour
         //We will be testing with the space key
         if (Input.GetKeyDown(KeyCode.Space))
             TakeDamage(20);
+        
+        if (isDead)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Respawn();
+                isDead = false;
+                gameObject.GetComponent<PlayerMovement>().enabled = true;
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
     }
 
     void TakeDamage(int damage)
     {
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
+        if (currHealth <= 0)
+        {
+            isDead = true;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+
+    void Respawn()
+    {
+        // this.gameObject.transform.position = this.spawnPoint.position;
+        // this.currHealth = this.maxHealth;
+        SceneManager.LoadScene(sceneName:"DemoHomeScene");
     }
 
     // private void OnCollisionEnter2D(Collision2D other) {
