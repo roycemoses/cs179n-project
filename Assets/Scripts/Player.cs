@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     {
         currHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
+        // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
     }
 
     // Update is called once per frame
