@@ -9,8 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 movement;
+    Vector2 mousePos;
 
     private Animator animator;
+
+    public Camera cam;
 
     void Start()
     {
@@ -29,6 +32,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Xinput", movement.x);
             animator.SetFloat("Yinput", movement.y);
         }
+
+        // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // Vector2 mouseDirection = mousePos - rb.position;
+        // float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
+        // if (Input.GetButtonDown("Fire1"))
+        //     Debug.Log("angle: " + angle);
     }
     
     void FixedUpdate()
