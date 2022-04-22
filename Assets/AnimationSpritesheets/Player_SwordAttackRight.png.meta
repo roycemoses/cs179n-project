@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: c69c31a3963fa124aa7462b817b3bf90
+guid: 8e1f22a19d10ab14f8c6c1f19aa370f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7569986900574418086
-    second: Player_SwordAttackLeft_0
+      213: -458290574108619496
+    second: Player_SwordAttackRight_0
   - first:
-      213: -1970503711914962904
-    second: Player_SwordAttackLeft_1
+      213: 4191978332662407673
+    second: Player_SwordAttackRight_1
   - first:
-      213: 2698155936351036875
-    second: Player_SwordAttackLeft_2
+      213: -7905249753475690627
+    second: Player_SwordAttackRight_2
   - first:
-      213: 4601972494793861
-    second: Player_SwordAttackLeft_3
+      213: -1932817840543491040
+    second: Player_SwordAttackRight_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_SwordAttackLeft_0
+      name: Player_SwordAttackRight_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 58
-        height: 88
+        width: 56
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5bc6ec750102f690800000000000000
-      internalID: -7569986900574418086
+      spriteID: 81d8856a623d3a9f0800000000000000
+      internalID: -458290574108619496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_SwordAttackLeft_1
+      name: Player_SwordAttackRight_1
       rect:
         serializedVersion: 2
-        x: 58
+        x: 56
         y: 0
-        width: 58
-        height: 88
+        width: 56
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82058be605d57a4e0800000000000000
-      internalID: -1970503711914962904
+      spriteID: 9f12a706516ec2a30800000000000000
+      internalID: 4191978332662407673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_SwordAttackLeft_2
+      name: Player_SwordAttackRight_2
       rect:
         serializedVersion: 2
-        x: 116
+        x: 112
         y: 0
-        width: 58
-        height: 88
+        width: 56
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc5a0d65786c17520800000000000000
-      internalID: 2698155936351036875
+      spriteID: d7f4657ab39ea4290800000000000000
+      internalID: -7905249753475690627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_SwordAttackLeft_3
+      name: Player_SwordAttackRight_3
       rect:
         serializedVersion: 2
-        x: 174
+        x: 168
         y: 0
-        width: 58
-        height: 88
+        width: 56
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58c71d73879501000800000000000000
-      internalID: 4601972494793861
+      spriteID: 02c1ede1a604d25e0800000000000000
+      internalID: -1932817840543491040
       vertices: []
       indices: 
       edges: []
