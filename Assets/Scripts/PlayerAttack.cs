@@ -48,6 +48,11 @@ public class PlayerAttack : MonoBehaviour
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;                
             }
+            else if (Input.GetButton("Fire1"))
+            {
+                GameObject.Find("PlayerFirepoint").GetComponent<PlayerShoot>().Shoot();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 

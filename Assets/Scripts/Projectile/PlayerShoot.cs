@@ -10,16 +10,7 @@ public class PlayerShoot : MonoBehaviour
 
     public float projectileForce = 15f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
-    }
-
-    void Shoot()
+    public void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
