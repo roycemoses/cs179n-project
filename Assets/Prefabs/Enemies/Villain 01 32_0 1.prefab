@@ -493,6 +493,7 @@ MonoBehaviour:
   maxHealth: 100
   currHealth: 100
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
+  coin: {fileID: 1681407547197436695, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
 --- !u!1 &8763234374880230363
 GameObject:
   m_ObjectHideFlags: 0
