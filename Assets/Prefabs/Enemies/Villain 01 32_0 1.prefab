@@ -337,8 +337,8 @@ GameObject:
   - component: {fileID: 8763234374602413305}
   - component: {fileID: 8763234374602413306}
   - component: {fileID: 8763234374602413307}
-  - component: {fileID: 8763234374602413308}
   - component: {fileID: 8482830390272892493}
+  - component: {fileID: 2478778526620833377}
   m_Layer: 6
   m_Name: Villain 01 32_0 1
   m_TagString: Enemy
@@ -479,22 +479,6 @@ PolygonCollider2D:
       - {x: 0.33050674, y: 0.38698104}
       - {x: 0.26256257, y: 0.3883746}
       - {x: 0.26438844, y: 0.45066446}
---- !u!114 &8763234374602413308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763234374602413309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4891a0cc9dfe03f439ee5da693e4c3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hb: {fileID: 8763234374880230362}
-  maxHealth: 100
-  currHealth: 100
-  deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
 --- !u!114 &8482830390272892493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +492,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 1
+--- !u!114 &2478778526620833377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763234374602413309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4891a0cc9dfe03f439ee5da693e4c3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  xp: 0
+  gold: 0
+  maxHealth: 100
+  currHealth: 100
+  healthbar: {fileID: 8763234374880230362}
+  deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
 --- !u!1 &8763234374880230363
 GameObject:
   m_ObjectHideFlags: 0
