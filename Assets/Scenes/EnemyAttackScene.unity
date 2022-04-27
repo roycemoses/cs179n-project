@@ -21736,6 +21736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478778526620833377, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8763234374257196706, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -30275,6 +30279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
   maxHealth: 100
   currHealth: 0
   healthBar: {fileID: 2137434878}

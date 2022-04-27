@@ -12,7 +12,12 @@ public class EnemyProjectileScript : MonoBehaviour
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
-            Debug.Log(collision.collider);
+            // Debug.Log(collision.collider);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                int damage = gameObject.transform.parent.gameObject.GetComponent<Enemy>().damage;
+                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            }            
             Destroy(gameObject);
         }
     }

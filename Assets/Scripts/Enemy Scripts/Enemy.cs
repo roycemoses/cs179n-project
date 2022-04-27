@@ -37,6 +37,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
             this.gameObject.SetActive(false);
         }
     }
+    
     private void DeathEffect()
     {
         if(deathEffect != null)
