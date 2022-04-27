@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Villian : MonoBehaviour
+public class Villain : MonoBehaviour
 {
     public HealthBar hb;
     public int maxHealth = 100;
@@ -21,7 +21,7 @@ public class Villian : MonoBehaviour
             TakeDamage(20);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currHealth -= damage;
         hb.SetHealth(currHealth);
