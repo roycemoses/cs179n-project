@@ -12,7 +12,7 @@ public class Ogre : Enemy
     public override int xp{get;} = 32;
     public override int gold{get;} = 100;
     
-    // Start is called before the first frame update
+ 
     void Start()
     {
         //debugs
@@ -21,12 +21,14 @@ public class Ogre : Enemy
         // print(this.xp);
         // print(this.gold);
     }
-    /*
+
+    
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
-    */
+    
 }
