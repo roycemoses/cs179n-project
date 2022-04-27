@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public int damage = 0;
     public int maxHealth = 100;
-    public int currHealth;
+    public int currHealth = 0;
     public HealthBar healthBar;
     public bool isDead = false;
     public Transform spawnPoint;
@@ -60,4 +61,9 @@ public class Player : MonoBehaviour
     //     if (other.gameObject.layer == LayerMask.NameToLayer("Enemies"))
     //         Physics2D.IgnoreCollision(GetComponent<Collider>(), collider);
     // }
+
+
+
+    // // public getters
+    // int getDamage() { return damage; }
 }
