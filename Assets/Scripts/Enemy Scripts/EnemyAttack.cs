@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    public float attackRate = 10f;
     float nextAttackTime = 0f;
+    bool inRange = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,17 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextAttackTime)
+        // check if player is in enemy's attack range
+        Vector3 playerPos = GameObject.Find("Player").transform.position;
+        float distance = Vector2.Distance(playerPos, transform.position);
+        if (distance > GetComponent<Enemy>().attackRange)
+            inRange = false;
+        else
+            inRange = true;
+        if (Time.time >= nextAttackTime && inRange)
         {
             gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
-            nextAttackTime = Time.time + 1f / attackRate;
-        }        
+            nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
+        }
     }
 }

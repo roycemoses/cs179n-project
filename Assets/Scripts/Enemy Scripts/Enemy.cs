@@ -11,6 +11,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public int gold = 0;
     public int maxHealth = 0;
     public int currHealth = 0;
+    public float attackRange = 0f;
+    public float attackRate = 0f;
     public HealthBar healthbar;
     public GameObject deathEffect;
 

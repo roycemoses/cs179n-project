@@ -339,6 +339,8 @@ GameObject:
   - component: {fileID: 8763234374602413307}
   - component: {fileID: 8482830390272892493}
   - component: {fileID: 2478778526620833377}
+  - component: {fileID: 3932294818204469361}
+  - component: {fileID: 7227332044271772623}
   m_Layer: 6
   m_Name: Villain 01 32_0 1
   m_TagString: Enemy
@@ -491,7 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731d9ea5ed98ae8448a6bc7209eb7663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 1
 --- !u!114 &2478778526620833377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,8 +510,48 @@ MonoBehaviour:
   gold: 0
   maxHealth: 100
   currHealth: 100
+  attackRange: 5
+  attackRate: 1
   healthbar: {fileID: 8763234374880230362}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
+--- !u!114 &3932294818204469361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763234374602413309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95c1de7b85d94617abad70dfc45a2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  startWaitTime: 1
+  detectRange: 3
+  Player: {fileID: 0}
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &7227332044271772623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763234374602413309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc19bb22724f74aaa85c360d0ef953dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  stoppingDistance: 3
+  initialPos: {x: 0, y: 0}
+  returnDistance: 8
 --- !u!1 &8763234374880230363
 GameObject:
   m_ObjectHideFlags: 0

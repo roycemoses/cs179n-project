@@ -19,6 +19,11 @@
         {
            waitTime = startWaitTime;
            randomSpot = Random.Range(0, moveSpots.Length);
+           Player = GameObject.Find("Player").transform;
+           if (Player == null)
+           {
+               Debug.Log("Error: Enemy cannot find player");
+           }
         }
 
 
