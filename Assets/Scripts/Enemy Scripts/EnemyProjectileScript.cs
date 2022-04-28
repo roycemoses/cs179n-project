@@ -6,17 +6,17 @@ public class EnemyProjectileScript : MonoBehaviour
 {
     // public GameObject hitEffect;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (!collider.gameObject.CompareTag("Enemy"))
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
             // Debug.Log(collision.collider);
-            if (collision.gameObject.CompareTag("Player"))
+            if (collider.gameObject.CompareTag("Player"))
             {
                 int damage = gameObject.transform.parent.gameObject.GetComponent<Enemy>().damage;
-                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+                collider.gameObject.GetComponent<Player>().TakeDamage(damage);
             }            
             Destroy(gameObject);
         }

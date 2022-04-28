@@ -32,8 +32,9 @@ public class Player : MonoBehaviour
             {
                 Respawn();
                 isDead = false;
-                gameObject.GetComponent<PlayerMovement>().enabled = true;
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<PlayerMovement>().enabled = true;
+                GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
@@ -45,8 +46,9 @@ public class Player : MonoBehaviour
         if (currHealth <= 0)
         {
             isDead = true;
-            gameObject.GetComponent<PlayerMovement>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
