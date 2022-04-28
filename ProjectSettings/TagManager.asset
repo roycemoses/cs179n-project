@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -20,10 +21,6 @@ TagManager:
   - Player
   - PlayerTriggers
   - EnemyTriggers
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

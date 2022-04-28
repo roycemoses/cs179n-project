@@ -30458,9 +30458,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478778526620833377, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478778526620833377, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
+      propertyPath: attackRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478778526620833377, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
+      propertyPath: attackRange
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3932294818204469361, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
       propertyPath: speed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3932294818204469361, guid: ed43c5c04092e6c419a6ec449a8328b2, type: 3}
       propertyPath: Player
