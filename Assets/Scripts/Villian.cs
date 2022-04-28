@@ -8,6 +8,8 @@ public class Villian : MonoBehaviour
     public int maxHealth = 100;
     public int currHealth;
     public GameObject deathEffect;
+    public GameObject coin;
+    public int coinDelay;
     void Start()
     {
         currHealth = maxHealth;
@@ -28,6 +30,8 @@ public class Villian : MonoBehaviour
         if(currHealth <= 0)
         {
             DeathEffect();
+            //CoinEffect();
+            Invoke("CoinEffect", 1);
             this.gameObject.SetActive(false);
         }
     }
@@ -37,6 +41,14 @@ public class Villian : MonoBehaviour
         {
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
+        }
+    }
+    private void CoinEffect()
+    {
+        if (coin != null)
+        {
+            GameObject effect = Instantiate(coin, transform.position, Quaternion.identity);
+            //Destroy(effect, 1f);
         }
     }
 }
