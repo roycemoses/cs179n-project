@@ -1,19 +1,26 @@
+//Base Enemy class
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Villian : MonoBehaviour
+public abstract class Enemy : MonoBehaviour//perhaps abstract
 {
-    public HealthBar hb;
-    public int maxHealth = 100;
-    public int currHealth;
+    public int damage = 0;
+    public int xp = 0;
+    public int gold = 0;
+    public int maxHealth = 0;
+    public int currHealth = 0;
+    public float attackRange = 0f;
+    public float attackRate = 0f;
+    public HealthBar healthbar;
     public GameObject deathEffect;
     public GameObject coin;
     public int coinDelay;
     void Start()
     {
         currHealth = maxHealth;
-        hb.SetMaxHealth(maxHealth);
+        healthbar.SetMaxHealth(maxHealth);
     }
     // Update is called once per frame
     void Update()
@@ -23,10 +30,10 @@ public class Villian : MonoBehaviour
             TakeDamage(20);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currHealth -= damage;
-        hb.SetHealth(currHealth);
+        healthbar.SetHealth(currHealth);
         if(currHealth <= 0)
         {
             DeathEffect();
@@ -35,6 +42,7 @@ public class Villian : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+    
     private void DeathEffect()
     {
         if(deathEffect != null)

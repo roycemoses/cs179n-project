@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public int damage = 0;
     public int maxHealth = 100;
-    public int currHealth;
+    public int currHealth = 0;
     public HealthBar healthBar;
     public bool isDead = false;
     public Transform spawnPoint;
@@ -31,21 +32,23 @@ public class Player : MonoBehaviour
             {
                 Respawn();
                 isDead = false;
-                gameObject.GetComponent<PlayerMovement>().enabled = true;
-                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<PlayerMovement>().enabled = true;
+                GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currHealth -= damage;
         healthBar.SetHealth(currHealth);
         if (currHealth <= 0)
         {
             isDead = true;
-            gameObject.GetComponent<PlayerMovement>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -60,4 +63,9 @@ public class Player : MonoBehaviour
     //     if (other.gameObject.layer == LayerMask.NameToLayer("Enemies"))
     //         Physics2D.IgnoreCollision(GetComponent<Collider>(), collider);
     // }
+
+
+
+    // // public getters
+    // int getDamage() { return damage; }
 }

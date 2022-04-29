@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileScript : MonoBehaviour
+public class EnemyProjectileScript : MonoBehaviour
 {
     // public GameObject hitEffect;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!collider.gameObject.CompareTag("Player"))
+        if (!collider.gameObject.CompareTag("Enemy"))
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
             // Debug.Log(collision.collider);
-            if (collider.gameObject.CompareTag("Enemy"))
+            if (collider.gameObject.CompareTag("Player"))
             {
-                int damage = GameObject.Find("Player").GetComponent<Player>().damage;
-                collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+                int damage = gameObject.transform.parent.gameObject.GetComponent<Enemy>().damage;
+                collider.gameObject.GetComponent<Player>().TakeDamage(damage);
             }
             if (!collider.gameObject.CompareTag("Projectile"))
                 Destroy(gameObject);
