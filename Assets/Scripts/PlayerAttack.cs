@@ -19,39 +19,67 @@ public class PlayerAttack : MonoBehaviour
 
     public AttackDirection attackDirection;
 
+    public float angle;
+
+    public string[] weapons = {"Fists", "Sword", "Projectile"};
+    public string currentWeapon;
+    public int currentWeaponIndex = 0;
+
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C)) // Change weapons!
+        {
+            currentWeaponIndex++;
+            if (currentWeaponIndex == weapons.Length) // Cycle through the weapons array! Go back to 0 index
+                currentWeaponIndex = 0;
+            currentWeapon = weapons[currentWeaponIndex];
+        }
+        
+        angle = PlayerShootCam.angle;
+        // if (Input.GetButtonDown("Fire1"))
+        //     Debug.Log("angle: " + angle);
+
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (currentWeapon == "Sword")
             {
-                attackDirection = AttackDirection.Left;
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                if ( Input.GetButtonDown("Fire1") && ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // LEFT **
+                {
+                    attackDirection = AttackDirection.Left;
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                    Debug.Log("LEFT");
+                }
+                else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
+                {
+                    attackDirection = AttackDirection.Right;
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                    Debug.Log("RIGHT");
+                }
+                else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
+                {
+                    attackDirection = AttackDirection.Up;
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                    Debug.Log("UP");                
+                }
+                else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
+                {
+                    attackDirection = AttackDirection.Down;
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                    Debug.Log("DOWN");   
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (currentWeapon == "Projectile")
             {
-                attackDirection = AttackDirection.Right;
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;                
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                attackDirection = AttackDirection.Up;
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;                
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                attackDirection = AttackDirection.Down;
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;                
-            }
-            else if (Input.GetButton("Fire1"))
-            {
-                GameObject.Find("PlayerFirepoint").GetComponent<PlayerShoot>().Shoot();
-                nextAttackTime = Time.time + 1f / attackRate;
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    GameObject.Find("PlayerFirepoint").GetComponent<PlayerShoot>().Shoot();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
             }
         }
     }
