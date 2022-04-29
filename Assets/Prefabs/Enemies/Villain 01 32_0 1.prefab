@@ -270,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7340486653551657157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.35347, y: 8.224432, z: 0}
+  m_LocalPosition: {x: 11.27, y: 8.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7340486654014734572}
@@ -428,6 +428,8 @@ MonoBehaviour:
   attackRate: 1
   healthbar: {fileID: 7340486654492686904}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
+  coin: {fileID: 0}
+  coinDelay: 0
 --- !u!114 &7340486653551657163
 MonoBehaviour:
   m_ObjectHideFlags: 0

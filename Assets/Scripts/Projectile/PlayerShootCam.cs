@@ -7,8 +7,9 @@ public class PlayerShootCam : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 mousePos;
     Vector2 mouseDirection;
-    float angle;
+    public static float angle;
     public Camera cam;
+    public Vector2 mouseCursorPosition;
 
     // Update is called once per frame
     void Update()
@@ -19,13 +20,11 @@ public class PlayerShootCam : MonoBehaviour
         // if (Input.GetButtonDown("Fire1"))
         //     Debug.Log("angle: " + angle);
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        mouseCursorPosition = CrosshairCursor.mouseCursorPosition;
         transform.position = transform.parent.position;
-    }
     
-    void FixedUpdate()
-    {
-        mouseDirection = mousePos - rb.position;
+        mouseDirection = mouseCursorPosition - rb.position;
         angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
     }

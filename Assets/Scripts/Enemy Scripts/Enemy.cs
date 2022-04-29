@@ -15,8 +15,9 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public float attackRate = 0f;
     public HealthBar healthbar;
     public GameObject deathEffect;
-
-    public void Start()
+    public GameObject coin;
+    public int coinDelay;
+    void Start()
     {
         currHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
@@ -36,6 +37,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
         if(currHealth <= 0)
         {
             DeathEffect();
+            //CoinEffect();
+            Invoke("CoinEffect", 1);
             this.gameObject.SetActive(false);
         }
     }
@@ -48,5 +51,12 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
             Destroy(effect, 1f);
         }
     }
-
+    private void CoinEffect()
+    {
+        if (coin != null)
+        {
+            GameObject effect = Instantiate(coin, transform.position, Quaternion.identity);
+            //Destroy(effect, 1f);
+        }
+    }
 }
