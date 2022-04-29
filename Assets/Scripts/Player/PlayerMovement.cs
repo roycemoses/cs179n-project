@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
     public Camera cam;
+    public VectorValue startingPosition;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame

@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoHomeScene.unity
     guid: 62f794164ba1f8d49ad21968a5991bf5
+  - enabled: 1
+    path: Assets/Scenes/HomeBase.unity
+    guid: cc35a1805daa94b45a8b29992583d809
+  - enabled: 1
+    path: Assets/Scenes/FirstIslandScene.unity
+    guid: 61e54bca7ab666040a1e7c54cbba62a7
   m_configObjects: {}
