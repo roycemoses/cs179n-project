@@ -16522,6 +16522,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1377861763}
   cam: {fileID: 0}
+  startingPosition: {fileID: 11400000, guid: 6a8fafa3c1c59b94b8e17681593fe5bf, type: 2}
 --- !u!114 &1377861765
 MonoBehaviour:
   m_ObjectHideFlags: 0

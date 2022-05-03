@@ -5,6 +5,8 @@ using UnityEngine;
 public class CrosshairCursor : MonoBehaviour
 {
 
+    public static Vector2 mouseCursorPosition;
+
     void Awake()
     {  
         Cursor.visible = false;
@@ -13,7 +15,7 @@ public class CrosshairCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mouseCursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mouseCursorPos;
+        mouseCursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = mouseCursorPosition;
     }
 }
