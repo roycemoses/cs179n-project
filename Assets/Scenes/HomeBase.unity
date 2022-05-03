@@ -1478,6 +1478,13 @@ MonoBehaviour:
   animator: {fileID: 354010164}
   attackRate: 10
   attackDirection: 0
+  angle: 0
+  weapons:
+  - Fists
+  - Sword
+  - Projectile
+  currentWeapon: 
+  currentWeaponIndex: 0
 --- !u!114 &354010163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   maxHealth: 100
   currHealth: 0
   healthBar: {fileID: 0}
@@ -17641,7 +17649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee53266d0faa4db40a34cb55679b6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: FirstIslandScene
+  sceneToLoad: sprint3
   playerPosition: {x: -2, y: 0.8}
   playerStorage: {fileID: 11400000, guid: 6a8fafa3c1c59b94b8e17681593fe5bf, type: 2}
 --- !u!61 &1482482363
