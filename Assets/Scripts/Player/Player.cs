@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int damage = 0;
-    public int maxHealth = 100;
-    public int currHealth = 0;
+    //public int maxHealth = 100;
+    public int baseHealth = 100;
+    public int equipHealth;//baseHealth + armor stats
+    public int currHealth;
     public HealthBar healthBar;
+    public int oldEquip;
+    public int dam_red = 1;//damage reduction factor
     public bool isDead = false;
     public Transform spawnPoint;
     private Animator animator;
@@ -16,8 +20,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        equipHealth = baseHealth;
+        currHealth = baseHealth;
+        healthBar.SetMaxHealth(baseHealth);
+      
+        
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
         animator = GetComponent<Animator>();
     }
@@ -41,11 +48,21 @@ public class Player : MonoBehaviour
                 GetComponent<BoxCollider2D>().enabled = true;
             }
         }
+        /*int oldval = equipHealth;
+
+        if(equipHealth != oldval)
+        {
+
+        healthBar.SetMaxHealth(equipHealth);//if armor is picked up, increase this. put this in update
+        }
+        */
     }
+
+     
 
     public void TakeDamage(int damage)
     {
-        currHealth -= damage;
+        currHealth -= damage/dam_red;
         healthBar.SetHealth(currHealth);
         if (currHealth <= 0 && !isDead)
             DeathEffect();
