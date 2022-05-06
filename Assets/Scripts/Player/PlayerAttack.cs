@@ -49,6 +49,8 @@ public class PlayerAttack : MonoBehaviour
                     attackDirection = AttackDirection.Left;
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
+                    animator.SetFloat("Xinput", -1.0f);
+                    animator.SetFloat("Yinput", 0f);
                     Debug.Log("LEFT");
                 }
                 else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
@@ -56,6 +58,8 @@ public class PlayerAttack : MonoBehaviour
                     attackDirection = AttackDirection.Right;
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
+                    animator.SetFloat("Xinput", 1.0f);
+                    animator.SetFloat("Yinput", 0f);
                     Debug.Log("RIGHT");
                 }
                 else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
@@ -63,6 +67,8 @@ public class PlayerAttack : MonoBehaviour
                     attackDirection = AttackDirection.Up;
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
+                    animator.SetFloat("Xinput", 0f);
+                    animator.SetFloat("Yinput", 1f);
                     Debug.Log("UP");                
                 }
                 else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
@@ -70,6 +76,8 @@ public class PlayerAttack : MonoBehaviour
                     attackDirection = AttackDirection.Down;
                     Attack();
                     nextAttackTime = Time.time + 1f / attackRate;
+                    animator.SetFloat("Xinput", 0f);
+                    animator.SetFloat("Yinput", -1f);
                     Debug.Log("DOWN");   
                 }
             }
@@ -79,6 +87,30 @@ public class PlayerAttack : MonoBehaviour
                 {
                     GameObject.Find("PlayerFirepoint").GetComponent<PlayerShoot>().Shoot();
                     nextAttackTime = Time.time + 1f / attackRate;
+                }
+                if ( Input.GetButtonDown("Fire1") && ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // LEFT **
+                {
+                    animator.SetFloat("Xinput", -1.0f);
+                    animator.SetFloat("Yinput", 0f);
+                    // Debug.Log("LEFT");
+                }
+                else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
+                {
+                    animator.SetFloat("Xinput", 1.0f);
+                    animator.SetFloat("Yinput", 0f);
+                    // Debug.Log("RIGHT");
+                }
+                else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
+                {
+                    animator.SetFloat("Xinput", 0f);
+                    animator.SetFloat("Yinput", 1f);
+                    // Debug.Log("UP");                
+                }
+                else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
+                {
+                    animator.SetFloat("Xinput", 0f);
+                    animator.SetFloat("Yinput", -1f);
+                    // Debug.Log("DOWN");   
                 }
             }
         }
