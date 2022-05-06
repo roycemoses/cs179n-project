@@ -18,7 +18,7 @@ public class EnemyProjectileScript : MonoBehaviour
                 int damage = gameObject.transform.parent.gameObject.GetComponent<Enemy>().damage;
                 collider.gameObject.GetComponent<Player>().TakeDamage(damage);
             }
-            if (!collider.gameObject.CompareTag("Projectile"))
+            if (!collider.gameObject.CompareTag("Projectile") && !collider.gameObject.CompareTag("PlayerTrigger"))
                 Destroy(gameObject);
         }
     }
