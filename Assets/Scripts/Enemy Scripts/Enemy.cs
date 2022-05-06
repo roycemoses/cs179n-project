@@ -17,6 +17,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public GameObject deathEffect;
     public GameObject coin;
     public int coinDelay;
+    public bool isDead = false;
+
     void Start()
     {
         currHealth = maxHealth;
@@ -36,6 +38,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
         healthbar.SetHealth(currHealth);
         if(currHealth <= 0)
         {
+            isDead = true;
             DeathEffect();
             //CoinEffect();
             Invoke("CoinEffect", 1);
