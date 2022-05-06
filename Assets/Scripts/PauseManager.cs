@@ -16,7 +16,7 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("pause"))
+        if (Input.GetButtonDown("escape"))
         {
             ChangePause();
         }

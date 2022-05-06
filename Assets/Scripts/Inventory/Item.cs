@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item 
+[CreateAssetMenu]
+[System.Serializable]
+public class Item : ScriptableObject
 {
-    public enum ItemType 
-    {
-        Fists,
-        Sword,
-        Bow,
-        Coin
-    }
 
-    public ItemType itemType;
-    public int amount;
+    public Sprite itemSprite;
+    public string itemDescription;
+    public bool isKey;
 
 }
