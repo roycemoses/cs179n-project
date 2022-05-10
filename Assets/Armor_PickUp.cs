@@ -23,6 +23,8 @@ public class Armor_PickUp : MonoBehaviour
  }
   private void OnTriggerEnter2D(Collider2D other)
  {
+            if(other.tag == "Player")
+            {
                     hero.equipHealth = hero.equipHealth + armor_stat;//health is initially 100
                     hero.currHealth = hero.currHealth + armor_stat;
                     hero.healthBar.SetMaxHealth(hero.equipHealth);
@@ -31,6 +33,8 @@ public class Armor_PickUp : MonoBehaviour
                     print($"After: {hero.equipHealth}");//debug
                     Destroy(this.gameObject);
                     //or gameObject.SetActive(false);
-           
+            }
  }
+ 
+           
 }
