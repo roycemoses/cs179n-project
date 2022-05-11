@@ -2,33 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory
+[CreateAssetMenu]
+[System.Serializable]
+public class Inventory : ScriptableObject
 {
 
-    private List<Item> itemList;
+    public Item currentItem;
+    public List<Item> items = new List<Item>();
+    public int numberOfKeys;
+    public int coins;
 
-    public Inventory() 
+
+    public bool CheckForItem(Item item)
     {
-        itemList = new List<Item>();
-
-        // AddItem(new Item { itemType = Item.ItemType.Sword, amount = 1});
-        // Debug.Log(itemList.Count);
-    }
-
-    public void AddItem(Item item)
-    {
-        itemList.Add(item);
-    }
-
-    public void DisplayItems()
-    {
-        Debug.Log("itemList.Count: " + itemList.Count);
-        // Debug.Log("itemList[0].itemType: " + itemList[0].itemType);
-        for (int i = 0; i < itemList.Count; ++i)
+        if (items.Contains(item))
         {
-            Debug.Log("itemList[i].itemType: " + itemList[i].itemType);
+            return true;
         }
-        
+        return false;
+    }
+
+    public void AddItem(Item itemToAdd)
+    {
+        // Is the item a key?
+        if (itemToAdd.isKey)
+        {
+            numberOfKeys++;
+        }
+        else
+        {
+            if (!items.Contains(itemToAdd))
+            {
+                items.Add(itemToAdd);
+            }
+        }
     }
 
 }
