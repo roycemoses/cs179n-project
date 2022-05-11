@@ -16,7 +16,11 @@ public class ShopItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Q) && playerInRange)
+        {
+            Debug.Log("Player wants to buy the item!");
+            Destroy(transform.parent.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
