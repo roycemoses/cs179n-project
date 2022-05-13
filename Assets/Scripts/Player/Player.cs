@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -106,7 +107,7 @@ public class Player : MonoBehaviour
     {
         // this.gameObject.transform.position = this.spawnPoint.position;
         // this.currHealth = this.maxHealth;
-        SceneManager.LoadScene(sceneName:"DemoHomeScene");
+        SceneManager.LoadScene(sceneName:"HomeBase");
     }
 
     // private void OnCollisionEnter2D(Collision2D other) {
