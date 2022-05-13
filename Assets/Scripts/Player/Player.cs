@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
     public int coins = 0;
     public TextMeshProUGUI coinCounterDisplay;
 
-    public int coins = 0;
-
     // Start is called before the first frame update
     void Start()
     {
