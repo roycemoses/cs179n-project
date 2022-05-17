@@ -7,15 +7,14 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     {
-        SceneManager.LoadScene("FirstIsland");
-
+        // Player should start at the home base when they start the game
+        SceneManager.LoadScene("HomeBase");
     }
 
     public void QuitGame ()
     {
         Debug.Log("Quit game.");
         Application.Quit();
-
     }
  
 }
