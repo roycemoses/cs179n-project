@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//This script is attached to the Inventory panel
 public class InventoryManager : MonoBehaviour
 {
 
@@ -12,7 +13,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
-
+    public InventoryItem currentItem;
+    
     public void SetTextAndButton(string description, bool buttonActive)
     {
         descriptionText.text = description;
@@ -29,16 +31,19 @@ public class InventoryManager : MonoBehaviour
     void MakeInventorySlots()
     {   
         //Go through everything in inventory and set up a slot.
-        if (playerInventory)
+        if (playerInventory != null)
         {
+            //Go over everything in the inventory.
+            //Checks all the items, if the items exists then it creates a slot.
             for (int i = 0; i < playerInventory.myInventory.Count; i++)
             {
+                //Make a temp 
                 GameObject temp =
                     Instantiate(blankInventorySlot,
                     inventoryPanel.transform.position, Quaternion.identity);
-                temp.transform.SetParent(inventoryPanel.transform);
+                temp.transform.SetParent(inventoryPanel.transform);//this is the scrolls view 
                 InventorySlot newSlot = temp.GetComponent<InventorySlot>();
-                if (newSlot)
+                if (newSlot != null)
                 {
                     newSlot.Setup(playerInventory.myInventory[i], this);
                 }
@@ -54,9 +59,19 @@ public class InventoryManager : MonoBehaviour
         SetTextAndButton("", false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetupDescriptionAndButton(string newDescriptionString, 
+        bool isButtonUsable, InventoryItem newItem)
     {
+        currentItem = newItem;
+        descriptionText.text = newDescriptionString;
+        useButton.SetActive(isButtonUsable);
+    }
 
+    public void UseButtonPressed()
+    {
+        if(currentItem)
+        {
+            currentItem.Use();
+        }
     }
 }
