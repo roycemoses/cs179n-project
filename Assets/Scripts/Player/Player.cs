@@ -26,13 +26,9 @@ public class Player : MonoBehaviour
         equipHealth = baseHealth;
         currHealth = baseHealth;
         healthBar.SetMaxHealth(baseHealth);
-        coinCounterDisplay = (TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI));
-        
-      
-        
+        coinCounterDisplay = (TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI));    
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
-        animator = GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();        
     }
 
     // Update is called once per frame
