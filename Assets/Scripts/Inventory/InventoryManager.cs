@@ -9,7 +9,8 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Inventory Information")]
     public PlayerInventory playerInventory;
-    private bool isOpen;
+    private bool isOpen = false;
+    public GameObject inventoryCanvas;
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private TextMeshProUGUI descriptionText;
@@ -54,11 +55,11 @@ public class InventoryManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        ClearInventorySlots();
         MakeInventorySlots();
         SetTextAndButton("", false);
-        isOpen = false;
     }
 
     void Update()
@@ -75,11 +76,11 @@ public class InventoryManager : MonoBehaviour
         isOpen = !isOpen;
         if(isOpen)
         {
-            inventoryPanel.SetActive(true);
+            inventoryCanvas.SetActive(true);
         }
         else
         {
-            inventoryPanel.SetActive(false);
+            inventoryCanvas.SetActive(false);
         }
     }
 
