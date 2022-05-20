@@ -10,29 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3529af13adf2c3b4780fdb8eff9cb8ca, type: 3}
-  m_Name: Sword
+  m_Name: HP Potion
   m_EditorClassIdentifier: 
-  itemName: Sword
-  itemDescription: A sword that can be used to defeat villians.  DF +1
-  itemImage: {fileID: -5060834832481158024, guid: 86060f88f6779e344afb30399048f984, type: 3}
+  itemName: Health Potion
+  itemDescription: +5 HP
+  itemImage: {fileID: 7073716090051231500, guid: 86060f88f6779e344afb30399048f984, type: 3}
   amount: 0
   usable: 1
-  unique: 1
+  unique: 0
   thisEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000}
         m_TargetAssemblyTypeName: InventoryItem, Assembly-CSharp
         m_MethodName: updateAmount
