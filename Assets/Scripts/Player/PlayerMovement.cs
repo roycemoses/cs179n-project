@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        transform.position = startingPosition.initialValue;
+        // transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
