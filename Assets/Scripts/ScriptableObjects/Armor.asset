@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Armor Level 1
   itemDescription: I will protect you!
   itemImage: {fileID: -6201496572343781886, guid: 86060f88f6779e344afb30399048f984, type: 3}
-  amount: 1
+  amount: 0
   usable: 1
   unique: 1
   thisEvent:
