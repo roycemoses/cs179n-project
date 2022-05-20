@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Inventory Information")]
     public PlayerInventory playerInventory;
+    private bool isOpen;
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private TextMeshProUGUI descriptionText;
@@ -57,6 +58,29 @@ public class InventoryManager : MonoBehaviour
     {
         MakeInventorySlots();
         SetTextAndButton("", false);
+        isOpen = false;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown("i"))
+        {
+            Debug.Log("Pressed I");
+            OpenInventory();
+        }
+    }
+
+    public void OpenInventory()
+    {
+        isOpen = !isOpen;
+        if(isOpen)
+        {
+            inventoryPanel.SetActive(true);
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+        }
     }
 
     public void SetupDescriptionAndButton(string newDescriptionString, 
