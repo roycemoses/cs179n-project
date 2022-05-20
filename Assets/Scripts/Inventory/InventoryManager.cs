@@ -77,10 +77,12 @@ public class InventoryManager : MonoBehaviour
         if(isOpen)
         {
             inventoryCanvas.SetActive(true);
+            Cursor.visible = true;
         }
         else
         {
             inventoryCanvas.SetActive(false);
+            Cursor.visible = false;
         }
     }
 

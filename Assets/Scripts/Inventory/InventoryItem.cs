@@ -21,6 +21,7 @@ public class InventoryItem : ScriptableObject
         Debug.Log("Using Item");
         thisEvent.Invoke();
     }
+    
     public void updateAmount(int decrease)
     {
         //Will only implement taking away still have to implement picking up

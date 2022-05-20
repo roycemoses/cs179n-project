@@ -21,7 +21,7 @@ public class PhysicalInventoryItem : MonoBehaviour
     {
         if(playerInventory != null && thisItem != null)
         {
-            if(playerInventory.myInventory.Contains(thisItem))
+            if(playerInventory.myInventory.Contains(thisItem) && thisItem.unique == false)
             {
                 thisItem.amount++;
             }
