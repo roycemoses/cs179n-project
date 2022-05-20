@@ -69,6 +69,12 @@ public class Player : MonoBehaviour
             DeathEffect();
     }
 
+    public void AddLife(int lifeAdded)
+    {
+        currHealth += lifeAdded;
+        healthBar.SetHealth(currHealth);
+    }
+
     private void DeathEffect()
     {
         isDead = true;

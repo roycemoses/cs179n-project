@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
             useButton.SetActive(false);
         }
     }
-
     void MakeInventorySlots()
     {   
         //Go through everything in inventory and set up a slot.
@@ -37,21 +36,22 @@ public class InventoryManager : MonoBehaviour
             //Checks all the items, if the items exists then it creates a slot.
             for (int i = 0; i < playerInventory.myInventory.Count; i++)
             {
-                //Make a temp 
-                GameObject temp =
-                    Instantiate(blankInventorySlot,
-                    inventoryPanel.transform.position, Quaternion.identity);
-                temp.transform.SetParent(inventoryPanel.transform);//this is the scrolls view 
-                InventorySlot newSlot = temp.GetComponent<InventorySlot>();
-                if (newSlot != null)
+                if(playerInventory.myInventory[i].amount > 0 || playerInventory.myInventory[i].unique == true)
                 {
-                    newSlot.Setup(playerInventory.myInventory[i], this);
+                    //Make a temp 
+                    GameObject temp =
+                        Instantiate(blankInventorySlot,
+                        inventoryPanel.transform.position, Quaternion.identity);
+                    temp.transform.SetParent(inventoryPanel.transform);//this is the scrolls view 
+                    InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+                    if (newSlot != null)
+                    {
+                        newSlot.Setup(playerInventory.myInventory[i], this);
+                    }
                 }
             }
         }
     }
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -66,12 +66,26 @@ public class InventoryManager : MonoBehaviour
         descriptionText.text = newDescriptionString;
         useButton.SetActive(isButtonUsable);
     }
-
+    void ClearInventorySlots()
+    {
+        for(int i = 0; i < inventoryPanel.transform.childCount; i ++)
+        {
+            Destroy(inventoryPanel.transform.GetChild(i).gameObject);
+        }
+    }
     public void UseButtonPressed()
     {
         if(currentItem)
         {
             currentItem.Use();
+            //Clear all of the inventory slots
+            ClearInventorySlots();
+            //Refill all slots with new numbers
+            MakeInventorySlots();
+            if (currentItem.amount == 0)
+            {
+                SetTextAndButton("", false);
+            }
         }
     }
 }
