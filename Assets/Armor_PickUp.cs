@@ -57,3 +57,4 @@ public class Armor_PickUp : MonoBehaviour
 
         }
     }
+}
