@@ -310,13 +310,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Enable Debug Button 2
-    descriptiveName: 
+    m_Name: Inventory
+    descriptiveName: This closes and opens the inventory
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: backspace
-    altNegativeButton: 
-    altPositiveButton: joystick button 9
+    negativeButton: i
+    positiveButton: i
+    altNegativeButton: i
+    altPositiveButton: i
     gravity: 0
     dead: 0
     sensitivity: 0
@@ -468,6 +468,22 @@ InputManager:
     invert: 0
     type: 2
     axis: 6
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Debug Horizontal
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: left
+    positiveButton: right
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 5
     joyNum: 0
   - serializedVersion: 3
     m_Name: Debug Horizontal

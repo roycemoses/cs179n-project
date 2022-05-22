@@ -10,6 +10,7 @@ public class CrosshairCursor : MonoBehaviour
     void Awake()
     {  
         Cursor.visible = false;
+        
     }
 
     // Update is called once per frame

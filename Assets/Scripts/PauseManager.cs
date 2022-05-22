@@ -30,11 +30,13 @@ public class PauseManager : MonoBehaviour
         {
             pausePanel.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.visible = true;
         }
         else
         {
             pausePanel.SetActive(false);
             Time.timeScale = 1f;
+             Cursor.visible = false;
         }
     }
 

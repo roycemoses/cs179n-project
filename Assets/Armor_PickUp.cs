@@ -7,7 +7,8 @@ public class Armor_PickUp : MonoBehaviour
     //public Transform Player;
 
    // Player player;
-
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private InventoryItem thisItem;
    public Player hero;
    public int armor_stat;
 
@@ -33,8 +34,27 @@ public class Armor_PickUp : MonoBehaviour
                     print($"After: {hero.equipHealth}");//debug
                     Destroy(this.gameObject);
                     //or gameObject.SetActive(false);
-            }
- }
- 
+    if (other.gameObject.CompareTag("Player") && !other.isTrigger){
+            AddItemToInventory();
+            Destroy(this.gameObject);
+    }
            
+ }
+ }
+ void AddItemToInventory()
+    {
+        if(playerInventory != null && thisItem != null)
+        {
+            if(playerInventory.myInventory.Contains(thisItem))
+            {
+                thisItem.amount++;
+            }
+            else
+            {
+                playerInventory.myInventory.Add(thisItem); 
+                thisItem.amount += 1;
+            }
+
+        }
+    }
 }
