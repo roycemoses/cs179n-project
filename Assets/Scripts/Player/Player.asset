@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   hasInstance: 1
-  damage: 10
+  damage: 25
   baseHealth: 100
   equipHealth: 100
-  currHealth: 50
-  healthBar: {fileID: 9088441917954142680, guid: 2b9708f4283c83b4990436dab2ded182, type: 3}
+  currHealth: 96
+  healthBar: {fileID: 0}
   oldEquip: 0
   dam_red: 2
   isDead: 0
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
-  coins: 0
+  coins: 3
   coinCounterDisplay: {fileID: 0}
