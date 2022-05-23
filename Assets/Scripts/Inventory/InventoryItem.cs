@@ -16,6 +16,11 @@ public class InventoryItem : ScriptableObject
     public bool usable;
     public bool unique;
     public UnityEvent thisEvent;
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
     public void Use()
     {
         Debug.Log("Using Item");
