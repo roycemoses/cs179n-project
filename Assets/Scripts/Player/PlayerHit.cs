@@ -25,7 +25,7 @@ public class PlayerHit : MonoBehaviour
             // Debug.Log(collision.collider);
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                int damage = GameObject.Find("Player").GetComponent<Player>().damage;
+                int damage = GameObject.Find("Player").GetComponent<PlayerManager>().player.damage;
                 collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             }                    
         }

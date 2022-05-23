@@ -12,7 +12,7 @@ public class CoinDisplay : MonoBehaviour
     void Start()
     {
         //(TextMesh)FindObjectOfType(typeof(TextMesh))
-        hero = (Player)FindObjectOfType(typeof(Player));
+        // hero = (Player)FindObjectOfType(typeof(Player));
         //this.hero = GameObject.FindWithTag("Player").transform;
         //coinCounterDisplay = (TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI));
     }

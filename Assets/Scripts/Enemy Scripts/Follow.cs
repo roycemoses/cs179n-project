@@ -30,7 +30,7 @@ public class Follow : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
             Vector2 direction = transform.position - target.position;
-            Debug.Log("direction: " + direction);
+            // Debug.Log("direction: " + direction);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             animator.SetBool("isMoving", true);
 

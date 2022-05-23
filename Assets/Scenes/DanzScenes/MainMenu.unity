@@ -342,7 +342,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &281170417
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -352,7 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  hasInstance: 0
+  damage: 10
   baseHealth: 100
   equipHealth: 0
   currHealth: 0
@@ -361,6 +362,7 @@ MonoBehaviour:
   dam_red: 1
   isDead: 0
   spawnPoint: {fileID: 0}
+  animator: {fileID: 0}
   coins: 0
   coinCounterDisplay: {fileID: 0}
 --- !u!4 &281170418
@@ -562,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a8563549033409776b6201b96c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 281170417}
 --- !u!1 &515952025
 GameObject:
   m_ObjectHideFlags: 0
