@@ -323,62 +323,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212367914}
   m_CullTransparentMesh: 1
---- !u!1 &281170416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 281170418}
-  - component: {fileID: 281170417}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &281170417
-MonoBehaviour:
-  m_ObjectHideFlags: 32
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281170416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasInstance: 0
-  damage: 10
-  baseHealth: 100
-  equipHealth: 0
-  currHealth: 0
-  healthBar: {fileID: 0}
-  oldEquip: 0
-  dam_red: 1
-  isDead: 0
-  spawnPoint: {fileID: 0}
-  animator: {fileID: 0}
-  coins: 0
-  coinCounterDisplay: {fileID: 0}
---- !u!4 &281170418
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281170416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.807331, y: 11.436283, z: -2.5270734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359494464
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e7a8563549033409776b6201b96c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 281170417}
+  player: {fileID: 11400000, guid: 78d4ab441e3978b47a56fbf4d75ed04c, type: 2}
 --- !u!1 &515952025
 GameObject:
   m_ObjectHideFlags: 0

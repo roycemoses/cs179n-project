@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
+    public Player player;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
     public GameObject instance;
+
+    private void Start() {
+        SetMaxHealth(player.baseHealth);
+        SetHealth(player.currHealth);
+    }
 
     public void SetMaxHealth(int health)
     {
