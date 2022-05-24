@@ -2,35 +2,84 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Run : StateMachineBehaviour
+
+public class Boss_Run : MonoBehaviour
 {
-    Transform player;
-    Boss boss;
-    Rigidbody2D rb;
-    public float speed = 2.5f;
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+
+    public float speed;
+    public float stoppingDistance;
+    public Vector2 initialPos;// get too far from this then disable/enable.
+    public float returnDistance;
+    private float speed2;
+    private float speedoriginal;
+
+    private Transform target;//Player
+
+    private Animator animator;
+    private double timer = 10;
+    
+    void Start()
     {
-       player = GameObject.FindGameObjectWithTag("Player").transform;
-       rb = animator.GetComponent<Rigidbody2D>();
-       boss = animator.GetComponent<Boss>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        initialPos = gameObject.transform.position;
+        speed2 = speed + 2;
+        speedoriginal = speed;
+        animator = GetComponent<Animator>();
     }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    
+    void Update()
     {
-       boss.LookAtaPlayer();
-       Vector2 target = new Vector2(player.position.x, player.position.y);
-       Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+        {               
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-       rb.MovePosition(newPos);
+            Vector2 direction = transform.position - target.position;
+            Debug.Log("direction: " + direction);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            animator.SetBool("isMoving", true);
+
+            if ( ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // RIGHT
+            {
+                animator.SetFloat("Xinput", 1.0f);
+                animator.SetFloat("Yinput", 0f);
+                // Debug.Log("RIGHT");
+            }
+            else if ( ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // LEFT
+            {
+                animator.SetFloat("Xinput", -1.0f);
+                animator.SetFloat("Yinput", 0f);
+                // Debug.Log("LEFT");
+            }
+            else if (angle <= 135 && angle >= 45) // DOWN
+            {
+                animator.SetFloat("Xinput", 0f);
+                animator.SetFloat("Yinput", -1.0f);
+                // Debug.Log("DOWN");               
+            }
+            else if (angle >= -135 && angle <= -45) // UP
+            {
+                animator.SetFloat("Xinput", 0f);
+                animator.SetFloat("Yinput", 1.0f);
+                // Debug.Log("UP");   
+            }
+            
+            if(Vector2.Distance(transform.position, target.position) < 10){  
+                speed = speed2;
+            }
+            
+        }
+        else{
+            while(timer > 0){
+                // Debug.Log("stop moving");
+                animator.SetBool("isMoving", false);
+                speed = 3;
+                timer -= 0.001*Time.deltaTime;
+            }
+            timer = 10;
+        }
     }
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-       
-    }
-
-  
+        
 }
+
+    
+   

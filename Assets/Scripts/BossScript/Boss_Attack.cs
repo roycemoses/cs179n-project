@@ -8,19 +8,17 @@ public class Boss_Attack : MonoBehaviour
     private Animator animator;
     public int damage;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     //parameter passed in is the object this Boss object is colliding with
-    void OnCollisionEnter(Collider2D collider)
+    void OnTriggerEnter(Collider2D col)
     {
         //check if the object you are colliding with has tag player
-       if (collider.gameObject.CompareTag("Player"))
+       if (col.CompareTag("Player"))
         {
             Debug.Log("player and boss colliding");
-            collider.gameObject.GetComponent<Player>().TakeDamage(damage);
+            //have player take damage
+            col.gameObject.GetComponent<Player>().TakeDamage(damage);
         }
     }
 }
