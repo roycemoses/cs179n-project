@@ -123,6 +123,7 @@ MonoBehaviour:
   stoppingDistance: 0
   initialPos: {x: 0, y: 0}
   returnDistance: 0
+  fast: 0
 --- !u!1101 &-2686490073450539686
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
