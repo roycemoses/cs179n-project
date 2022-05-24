@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public int currHealth = 0;
     public float attackRange = 0f;
     public float attackRate = 0f;
-    public HealthBar healthbar;
+    public EnemyHealthBar healthbar;
     public GameObject deathEffect;
     public GameObject coin;
     public int coinDelay;

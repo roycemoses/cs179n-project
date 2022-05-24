@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 7340486653551657160}
   - component: {fileID: 7340486653551657163}
   - component: {fileID: 7340486653551657162}
+  - component: {fileID: 7448116967739791255}
   m_Layer: 6
   m_Name: Villain 01 32_0 1
   m_TagString: Enemy
@@ -426,10 +427,11 @@ MonoBehaviour:
   currHealth: 100
   attackRange: 8
   attackRate: 1
-  healthbar: {fileID: 7340486654492686904}
+  healthbar: {fileID: 1955154138993336970}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
   coinDelay: 0
+  isDead: 0
 --- !u!114 &7340486653551657163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +470,25 @@ MonoBehaviour:
   stoppingDistance: 3
   initialPos: {x: 0, y: 0}
   returnDistance: 8
+--- !u!95 &7448116967739791255
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340486653551657157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c632d6e7719ba142969e9670a365293, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7340486654014734575
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7340486654492686905}
   - component: {fileID: 7340486654492686910}
-  - component: {fileID: 7340486654492686904}
+  - component: {fileID: 1955154138993336970}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -809,7 +830,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7340486654492686904
+--- !u!114 &1955154138993336970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -818,7 +839,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7340486654492686907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 110682848bfb37e478a104aa0f2b3ec5, type: 3}
+  m_Script: {fileID: 11500000, guid: a4bed8b38d8d432408577500e1a59859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 7340486654492686910}
@@ -852,3 +873,5 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 7340486653312656716}
+  instance: {fileID: 0}
+  enemy: {fileID: 0}
