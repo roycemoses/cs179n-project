@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     public Transform spawnPoint;
     private Animator animator;
+    public int coins = 0;
+    public TextMeshProUGUI coinCounterDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,9 @@ public class Player : MonoBehaviour
         equipHealth = baseHealth;
         currHealth = baseHealth;
         healthBar.SetMaxHealth(baseHealth);
-      
-        
+        coinCounterDisplay = (TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI));    
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
-        animator = GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();        
     }
 
     // Update is called once per frame
@@ -57,6 +58,8 @@ public class Player : MonoBehaviour
         healthBar.SetMaxHealth(equipHealth);//if armor is picked up, increase this. put this in update
         }
         */
+
+        coinCounterDisplay.text = coins.ToString();
     }
 
      
@@ -67,6 +70,12 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currHealth);
         if (currHealth <= 0 && !isDead)
             DeathEffect();
+    }
+
+    public void AddLife(int lifeAdded)
+    {
+        currHealth += lifeAdded;
+        healthBar.SetHealth(currHealth);
     }
 
     private void DeathEffect()

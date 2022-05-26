@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuBG.unity
     guid: 5da7fb618d3b9ee43a76676948d7b939
   - enabled: 1
-    path: Assets/Scenes/HomeBase.unity
+    path: Assets/Scenes/MainScenes/HomeBase.unity
     guid: cc35a1805daa94b45a8b29992583d809
   - enabled: 0
     path: 
@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Neighborhood.unity
     guid: 182aa283f600e074ca9fd27c95d4f106
   - enabled: 1
-    path: Assets/Scenes/FirstIsland.unity
+    path: Assets/Scenes/MainScenes/FirstIsland.unity
     guid: 911585ddf346a9a44a19efe6b7c47568
   m_configObjects: {}
