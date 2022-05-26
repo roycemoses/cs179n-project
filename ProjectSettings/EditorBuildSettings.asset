@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/HomeBase.unity
     guid: cc35a1805daa94b45a8b29992583d809
+  - enabled: 1
+    path: Assets/Scenes/YardCutScene.unity
+    guid: d89a13775e6f87f4aafd2a16b43cb43e
+  - enabled: 1
+    path: Assets/Scenes/OpenCutScene.unity
+    guid: 884d23b2a984d6d42a18cb1f3d14408a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

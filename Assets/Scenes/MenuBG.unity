@@ -1686,7 +1686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2ecb5f71aeba740a19198047f7b1bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameScene: House
+  newGameScene: OpenCutScene
+  loadGameScene: House
 --- !u!4 &611841303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 880225830234205676, guid: 96dddad1305296f4d8637425a2adee84, type: 3}
@@ -11528,7 +11529,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.5008397
+      m_AnimationSpeed: 2.0933385
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -2, z: 0}
@@ -11558,7 +11559,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.1441865
+      m_AnimationSpeed: 2.615459
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -11791,7 +11792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1832268945}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 610259264}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1832268945
 MonoBehaviour:
   m_ObjectHideFlags: 0

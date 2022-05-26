@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public string newGameScene;
+    public string loadGameScene;
     void Start()
     {
         
@@ -25,5 +26,9 @@ public class MainMenuManager : MonoBehaviour
     public void QuitToDesktop()
     {
         Application.Quit();
+    }
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(loadGameScene);
     }
 }
