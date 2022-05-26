@@ -14,12 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/HomeBase.unity
     guid: cc35a1805daa94b45a8b29992583d809
-  - enabled: 1
-    path: Assets/Scenes/FirstIslandScene.unity
-    guid: 61e54bca7ab666040a1e7c54cbba62a7
-  - enabled: 1
-    path: Assets/Scenes/sprint3.unity
-    guid: 5c611fa24be7ac047a5d692b3d8150f8
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainScenes/FirstIsland.unity
     guid: 911585ddf346a9a44a19efe6b7c47568
