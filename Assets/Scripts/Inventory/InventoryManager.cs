@@ -16,6 +16,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
     public InventoryItem currentItem;
+    public AudioSource openInventorySound;
+    public AudioSource closeInventorySound;
     
     public void SetTextAndButton(string description, bool buttonActive)
     {
@@ -76,11 +78,13 @@ public class InventoryManager : MonoBehaviour
         isOpen = !isOpen;
         if(isOpen)
         {
+            openInventorySound.Play();
             inventoryCanvas.SetActive(true);
             Cursor.visible = true;
         }
         else
         {
+            closeInventorySound.Play();
             inventoryCanvas.SetActive(false);
             Cursor.visible = false;
         }

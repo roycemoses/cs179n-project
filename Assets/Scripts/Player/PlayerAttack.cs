@@ -25,6 +25,9 @@ public class PlayerAttack : MonoBehaviour
     public string currentWeapon;
     public int currentWeaponIndex = 0;
 
+    public AudioSource projectileSound;
+    public AudioSource swordSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -65,6 +68,7 @@ public class PlayerAttack : MonoBehaviour
                     animator.SetFloat("Xinput", -1.0f);
                     animator.SetFloat("Yinput", 0f);
                     Debug.Log("LEFT");
+                    swordSound.Play();
                 }
                 else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
                 {
@@ -74,6 +78,7 @@ public class PlayerAttack : MonoBehaviour
                     animator.SetFloat("Xinput", 1.0f);
                     animator.SetFloat("Yinput", 0f);
                     Debug.Log("RIGHT");
+                    swordSound.Play();
                 }
                 else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
                 {
@@ -82,7 +87,8 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", 1f);
-                    Debug.Log("UP");                
+                    Debug.Log("UP");       
+                    swordSound.Play();  
                 }
                 else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
                 {
@@ -92,6 +98,7 @@ public class PlayerAttack : MonoBehaviour
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", -1f);
                     Debug.Log("DOWN");   
+                    swordSound.Play();
                 }
             }
             else if (currentWeapon == "Projectile")
@@ -100,30 +107,35 @@ public class PlayerAttack : MonoBehaviour
                 {
                     GameObject.Find("PlayerFirepoint").GetComponent<PlayerShoot>().Shoot();
                     nextAttackTime = Time.time + 1f / attackRate;
+                    projectileSound.Play();
                 }
                 if ( Input.GetButtonDown("Fire1") && ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // LEFT **
                 {
                     animator.SetFloat("Xinput", -1.0f);
                     animator.SetFloat("Yinput", 0f);
                     // Debug.Log("LEFT");
+                    projectileSound.Play();
                 }
                 else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
                 {
                     animator.SetFloat("Xinput", 1.0f);
                     animator.SetFloat("Yinput", 0f);
                     // Debug.Log("RIGHT");
+                    projectileSound.Play();
                 }
                 else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
                 {
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", 1f);
-                    // Debug.Log("UP");                
+                    // Debug.Log("UP");     
+                    projectileSound.Play();           
                 }
                 else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
                 {
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", -1f);
                     // Debug.Log("DOWN");   
+                    projectileSound.Play();
                 }
             }
         }
