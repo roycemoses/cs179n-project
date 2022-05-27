@@ -3541,7 +3541,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.0063126
+      m_AnimationSpeed: 2.8946831
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -4, z: 0}
@@ -3571,7 +3571,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.3081
+      m_AnimationSpeed: 2.111204
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 7, z: 0}
@@ -3581,7 +3581,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.4102845
+      m_AnimationSpeed: 2.9543102
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 7, z: 0}
@@ -3611,7 +3611,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.3759794
+      m_AnimationSpeed: 2.9227743
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -7304,8 +7304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: 4.2201e-10}
-  m_SizeDelta: {x: 1696, y: 836}
+  m_AnchoredPosition: {x: 3.5371, y: -1.8913}
+  m_SizeDelta: {x: 3077.1118, y: 1516.7844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438837035
 MonoBehaviour:
@@ -7991,6 +7991,7 @@ MonoBehaviour:
   rb: {fileID: 1698841803}
   cam: {fileID: 577568905}
   startingPosition: {fileID: 11400000, guid: 6a8fafa3c1c59b94b8e17681593fe5bf, type: 2}
+  isMoving: 0
 --- !u!114 &1698841805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8013,6 +8014,9 @@ MonoBehaviour:
   - Projectile
   currentWeapon: 
   currentWeaponIndex: 0
+  projectileSound: {fileID: 0}
+  swordSound: {fileID: 0}
+  playerFirepoint: {fileID: 0}
 --- !u!114 &1698841806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8036,6 +8040,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   coins: 0
   coinCounterDisplay: {fileID: 0}
+  takeDamageSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!95 &1698841807
 Animator:
   serializedVersion: 3

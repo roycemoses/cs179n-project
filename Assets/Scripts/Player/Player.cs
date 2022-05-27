@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     public int coins = 0;
     public TextMeshProUGUI coinCounterDisplay;
+    public AudioSource takeDamageSound;
+    public AudioSource deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        takeDamageSound.Play();
         currHealth -= damage/dam_red;
         healthBar.SetHealth(currHealth);
         if (currHealth <= 0 && !isDead)
@@ -80,6 +83,7 @@ public class Player : MonoBehaviour
 
     private void DeathEffect()
     {
+        deathSound.Play();
         isDead = true;
         animator.SetBool("isDead", true);
         GetComponent<Rigidbody2D>().AddForce(transform.up * 600f);

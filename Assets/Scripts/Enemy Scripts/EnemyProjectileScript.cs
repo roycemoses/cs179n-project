@@ -7,8 +7,8 @@ public class EnemyProjectileScript : MonoBehaviour
     // public GameObject hitEffect;
 
     void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (!collider.gameObject.CompareTag("Enemy"))
+    { 
+        if (!collider.gameObject.CompareTag("Enemy") && LayerMask.LayerToName(collider.gameObject.layer) != "Floor")
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);

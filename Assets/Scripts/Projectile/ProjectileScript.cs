@@ -8,8 +8,9 @@ public class ProjectileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (!collider.gameObject.CompareTag("Player"))
+        if (!collider.gameObject.CompareTag("Player") && LayerMask.LayerToName(collider.gameObject.layer) != "Floor")
         {
+            Debug.Log(collider);
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
             // Debug.Log(collision.collider);

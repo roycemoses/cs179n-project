@@ -19,6 +19,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public int coinDelay;
     public bool isDead = false;
 
+    public AudioSource takeDamageSound;
+
     void Start()
     {
         currHealth = maxHealth;
@@ -34,6 +36,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
 
     public void TakeDamage(int damage)
     {
+        takeDamageSound.Play();
         currHealth -= damage;
         healthbar.SetHealth(currHealth);
         if(currHealth <= 0)
