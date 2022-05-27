@@ -11,7 +11,7 @@ public class FloorSFX : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == "Player")
+        if(collider.tag == "PlayerFootstep")
         {
             isOnFloor = true;
         }
@@ -20,7 +20,7 @@ public class FloorSFX : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.tag == "Player")
+        if(collider.tag == "PlayerFootstep")
         {
             isOnFloor = false;
         }

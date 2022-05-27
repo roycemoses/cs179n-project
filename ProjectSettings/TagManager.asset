@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - PlayerTrigger
   - Armor
+  - PlayerFootstep
   layers:
   - Default
   - TransparentFX
