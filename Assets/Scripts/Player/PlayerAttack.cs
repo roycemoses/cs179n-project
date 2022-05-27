@@ -28,6 +28,8 @@ public class PlayerAttack : MonoBehaviour
     public AudioSource projectileSound;
     public AudioSource swordSound;
 
+    public GameObject playerFirepoint;
+
     // Update is called once per frame
     void Update()
     {
@@ -42,14 +44,15 @@ public class PlayerAttack : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-           currentWeaponIndex = 1;
-           currentWeapon = weapons[currentWeaponIndex];
-            
+            currentWeaponIndex = 1;
+            currentWeapon = weapons[currentWeaponIndex];
+            playerFirepoint.GetComponent<SpriteRenderer>().enabled = false;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWeaponIndex = 2;
             currentWeapon = weapons[currentWeaponIndex];
+            playerFirepoint.GetComponent<SpriteRenderer>().enabled = true;
         }
         
         angle = PlayerShootCam.angle;
