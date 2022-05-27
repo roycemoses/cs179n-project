@@ -5,40 +5,55 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/MenuBG.unity
-    guid: 5da7fb618d3b9ee43a76676948d7b939
+    path: Assets/Scenes/MainScenes/FirstIsland.unity
+    guid: 911585ddf346a9a44a19efe6b7c47568
   - enabled: 1
     path: Assets/Scenes/MainScenes/HomeBase.unity
     guid: cc35a1805daa94b45a8b29992583d809
   - enabled: 1
+    path: Assets/Scenes/MainScenes/House.unity
+    guid: 06c3418e4dbdbc0458abda638cade45c
+  - enabled: 0
+    path: Assets/Scenes/MainScenes/Menu.unity
+    guid: ab2057f5c2f35de40b15a12dc072f797
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Neighborhood.unity
+    guid: 9e8e835d152bbd846a67e566997b1cb6
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/MenuBG.unity
+    guid: 69fa4becbb511ae4d8b92f594931dc37
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/OpenCutScene.unity
+    guid: da5b4e222410ae14d8fa20b9946a4feb
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/YardCutScene.unity
+    guid: 3a03009ce0c93c64489cd5f568560a54
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/BossScene.unity
+    guid: 7b6ba479e47d7dd41ac2e062dc1d346c
+  - enabled: 0
+    path: Assets/Scenes/MenuBG.unity
+    guid: 5da7fb618d3b9ee43a76676948d7b939
+  - enabled: 0
     path: Assets/Scenes/YardCutScene.unity
     guid: d89a13775e6f87f4aafd2a16b43cb43e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OpenCutScene.unity
     guid: 884d23b2a984d6d42a18cb1f3d14408a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: 5bc66c3e1ea278a43aa1f3121344bfa7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/House.unity
     guid: f9e75d2c005de964a8c75676639748a1
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Neighborhood.unity
     guid: 182aa283f600e074ca9fd27c95d4f106
-  - enabled: 1
-    path: Assets/Scenes/MainScenes/FirstIsland.unity
-    guid: 911585ddf346a9a44a19efe6b7c47568
   m_configObjects: {}
