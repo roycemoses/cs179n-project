@@ -9,6 +9,7 @@ TagManager:
   - PlayerTrigger
   - Armor
   - ClearRocks
+  - PlayerFootstep
   layers:
   - Default
   - TransparentFX
