@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfade91fc87c4df0afe4f3329c41726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 0}
+  hero: {fileID: 11400000, guid: 78d4ab441e3978b47a56fbf4d75ed04c, type: 2}
   coinCounter: 0
   pickUpCoin: {fileID: 8936261298081986836}
   pickUpCoinClip: {fileID: 0}

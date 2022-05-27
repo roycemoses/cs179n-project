@@ -4,23 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class HealthBar : MonoBehaviour
+public class EnemyHealthBar : MonoBehaviour
 {
-    public Player player;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
     public GameObject instance;
-
-    private void Awake() {
-        if (instance == null) {
-            instance = GameObject.Find("Canvas");
-            Debug.Log(instance);
-            DontDestroyOnLoad(instance);
-        }
-        else
-            Destroy(GameObject.Find("Canvas"));
-    }
+    public GameObject enemy;
 
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -36,16 +26,10 @@ public class HealthBar : MonoBehaviour
     }
 
     private void Start() {
-        if (player == null) {
-            player = Resources.Load<Player>("Player");
-            if (player == null) { Debug.Log("Rip"); }
-        }
-        SetMaxHealth(player.baseHealth);
-        SetHealth(player.currHealth);
     }
 
     private void Update() {
-        SetHealth(player.currHealth);  
+        SetHealth(enemy.GetComponent<Enemy>().currHealth);
     }
 
     public void SetMaxHealth(int health)
