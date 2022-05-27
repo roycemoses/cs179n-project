@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - PlayerTrigger
   - Armor
+  - ClearRocks
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - PlayerTriggers
   - EnemyTriggers
-  - 
+  - Floor
   - 
   - 
   - 

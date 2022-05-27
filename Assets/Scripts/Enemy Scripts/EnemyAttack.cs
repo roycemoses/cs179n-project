@@ -10,6 +10,8 @@ public class EnemyAttack : MonoBehaviour
 
     private Animator animator;
 
+    public AudioSource projectileSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class EnemyAttack : MonoBehaviour
             inRange = true;
         if (Time.time >= nextAttackTime && inRange)
         {
+            projectileSound.Play();
             gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
             nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
             Vector2 direction = transform.position - playerPos;
