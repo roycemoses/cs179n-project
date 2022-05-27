@@ -21,21 +21,21 @@ public class InventorySlot : MonoBehaviour
         if (thisItem)
         {
             itemImage.sprite = thisItem.itemImage;
-            itemNumberText.text = "" + thisItem.amount;
+            if(thisItem.unique == true)
+            {
+                itemNumberText.text = " ";
+            }
+            else
+                itemNumberText.text = "" + thisItem.amount;
         }
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void ClickedOn()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if(thisItem)
+        {
+            thisManager.SetupDescriptionAndButton(thisItem.itemDescription,
+                thisItem.usable, thisItem);
+        }
     }
 }

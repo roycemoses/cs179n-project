@@ -28,11 +28,24 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.C)) // Change weapons!
         {
             currentWeaponIndex++;
             if (currentWeaponIndex == weapons.Length) // Cycle through the weapons array! Go back to 0 index
                 currentWeaponIndex = 0;
+            currentWeapon = weapons[currentWeaponIndex];
+        }*/
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+           currentWeaponIndex = 1;
+           currentWeapon = weapons[currentWeaponIndex];
+            
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeaponIndex = 2;
             currentWeapon = weapons[currentWeaponIndex];
         }
         
