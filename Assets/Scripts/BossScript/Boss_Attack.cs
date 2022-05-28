@@ -19,7 +19,7 @@ public class Boss_Attack : MonoBehaviour
             
             Debug.Log("player and boss colliding");
             //have player take damage
-            col.gameObject.GetComponent<Player>().TakeDamage(damage);
+            col.gameObject.GetComponent<PlayerManager>().TakeDamage(damage);
             GetComponent<Boss_Run>().fast = false;
             animator.SetBool("isMoving", false);
         }

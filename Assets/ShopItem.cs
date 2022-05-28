@@ -6,11 +6,14 @@ public class ShopItem : MonoBehaviour
 {
     bool playerInRange = false;
     public int goldCost;
+    public int attack;
+
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Player has " + GameObject.Find("Player").GetComponent<Player>().coins + " coins");
+        Debug.Log("Player has " + player.coins + " coins");
     }
 
     // Update is called once per frame
@@ -18,7 +21,6 @@ public class ShopItem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && playerInRange)
         {
-            Player player = GameObject.Find("Player").GetComponent<Player>();
             if (player.coins >= goldCost)
             {
                 player.coins -= goldCost;

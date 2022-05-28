@@ -8,6 +8,12 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     public string newGameScene;
     public string loadGameScene;
+
+    public AudioSource takeDamage;
+
+    public AudioSource death;
+
+    public Player player;
     void Start()
     {
         
@@ -20,6 +26,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void NewGame()
     {
+        player.currHealth = player.baseHealth;
+        player.equipHealth = player.baseHealth;
+        player.coins = 0;
+        player.takeDamageSound = takeDamage;
+        player.deathSound = death;
+        player.isDead = false;
         SceneManager.LoadScene(newGameScene);
     }
 
