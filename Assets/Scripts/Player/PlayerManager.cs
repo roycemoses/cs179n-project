@@ -101,6 +101,6 @@ public class PlayerManager : MonoBehaviour
     {
         // this.gameObject.transform.position = this.spawnPoint.position;
         // this.currHealth = this.maxHealth;
-        SceneManager.LoadScene(sceneName:"Scenes/DanzScenes/HomeBase");
+        SceneManager.LoadScene(sceneName:"Scenes/MainScenes/HomeBase");
     }
 }

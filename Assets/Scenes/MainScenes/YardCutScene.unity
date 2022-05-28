@@ -930,6 +930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFirepoint
       objectReference: {fileID: 0}
+    - target: {fileID: 7076463877693760421, guid: 0904f6ee797b15f41966f278807e4511, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0904f6ee797b15f41966f278807e4511, type: 3}
 --- !u!4 &322285538 stripped
@@ -2267,6 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasInstance: 0
   damage: 20
   baseHealth: 100
   equipHealth: 0
@@ -2276,6 +2281,7 @@ MonoBehaviour:
   dam_red: 1
   isDead: 0
   spawnPoint: {fileID: 0}
+  animator: {fileID: 0}
   coins: 0
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
@@ -11939,7 +11945,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.2262328
+      m_AnimationSpeed: 2.8677337
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -4, z: 0}
@@ -11969,7 +11975,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.924334
+      m_AnimationSpeed: 2.4438324
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 7, z: 0}
@@ -11979,7 +11985,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.734495
+      m_AnimationSpeed: 2.9185693
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 7, z: 0}
@@ -12009,7 +12015,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.886618
+      m_AnimationSpeed: 2.9241068
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:

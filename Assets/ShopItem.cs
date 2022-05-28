@@ -6,6 +6,7 @@ public class ShopItem : MonoBehaviour
 {
     bool playerInRange = false;
     public int goldCost;
+    public int attack;
 
     public Player player;
 

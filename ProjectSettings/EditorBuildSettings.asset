@@ -5,16 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScenes/FirstIsland.unity
     guid: 911585ddf346a9a44a19efe6b7c47568
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScenes/HomeBase.unity
     guid: cc35a1805daa94b45a8b29992583d809
   - enabled: 1
     path: Assets/Scenes/MainScenes/House.unity
     guid: 06c3418e4dbdbc0458abda638cade45c
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/FirstIsland.unity
+    guid: d1e4f1d985c290549acfea9fee9909be
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/HomeBase.unity
+    guid: 21606b5e130f06e4da703ece39bad87d
+  - enabled: 1
     path: Assets/Scenes/MainScenes/Menu.unity
     guid: ab2057f5c2f35de40b15a12dc072f797
   - enabled: 1
