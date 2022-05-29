@@ -11,7 +11,7 @@ public class HealthReaction : MonoBehaviour
     
     // Use this for initialization
     private void Start () {
-        print($"Before: {hero.equipHealth}");//debug
+        // print($"Before: {hero.equipHealth}");//debug
     }
  
     // Update is called once per frame

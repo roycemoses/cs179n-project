@@ -11,7 +11,7 @@ public class ProjectileScript : MonoBehaviour
     {
         if (!collider.gameObject.CompareTag("Player") && LayerMask.LayerToName(collider.gameObject.layer) != "Floor")
         {
-            Debug.Log(collider);
+            // Debug.Log(collider);
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
             // Debug.Log(collision.collider);
