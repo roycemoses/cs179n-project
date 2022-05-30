@@ -71,29 +71,25 @@
             else
                 animator.SetBool("isMoving", false);
             
-
-            transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-            
-            if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+            if(waitTime <= 0)
             {
-                if(waitTime <= 0)
-                {
-                    randomSpot = Random.Range(0, moveSpots.Length);
-                    waitTime = startWaitTime;
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
-                }
-
-                if(Vector2.Distance(Player.position, transform.position) <= detectRange)//if player gets close to enemy
-                {
-                    //enable follow and disable patrol2
-                    gameObject.GetComponent<Follow>().enabled = true;
-                    gameObject.GetComponent<Patrol2>().enabled = false;
-
-                }
+                randomSpot = Random.Range(0, moveSpots.Length);
+                waitTime = startWaitTime;
             }
+            else
+            {
+                waitTime -= Time.deltaTime;
+            }
+
+            if(Vector2.Distance(Player.position, transform.position) <= detectRange)//if player gets close to enemy
+            {
+                //enable follow and disable patrol2
+                gameObject.GetComponent<Follow>().enabled = true;
+                gameObject.GetComponent<Patrol2>().enabled = false;
+
+            }
+            else
+                transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);        
         }
     }
 

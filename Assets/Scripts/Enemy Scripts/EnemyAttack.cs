@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
+    public float chargeUpDurationSeconds = 2;
+    public bool isAttacking = false;
     float nextAttackTime = 0f;
     bool inRange = false;
 
@@ -28,11 +29,9 @@ public class EnemyAttack : MonoBehaviour
             inRange = false;
         else
             inRange = true;
-        if (Time.time >= nextAttackTime && inRange)
+        if (Time.time >= nextAttackTime && inRange && !isAttacking)
         {
-            projectileSound.Play();
-            gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
-            nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
+            StartCoroutine(Attack());
             Vector2 direction = transform.position - playerPos;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  
             if ( ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // RIGHT
@@ -60,5 +59,16 @@ public class EnemyAttack : MonoBehaviour
                 // Debug.Log("UP");   
             }
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+        Debug.Log("Enemy is charging up an attack!");
+        yield return new WaitForSeconds(chargeUpDurationSeconds);
+        projectileSound.Play();
+        gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
+        isAttacking = false;
+        nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
     }
 }

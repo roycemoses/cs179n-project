@@ -21,6 +21,8 @@ public class Follow : MonoBehaviour
         initialPos = gameObject.transform.position;
 
         animator = GetComponent<Animator>();
+
+        stoppingDistance = GetComponent<Enemy>().attackRange;
     }
     
     void Update()
