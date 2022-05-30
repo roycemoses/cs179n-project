@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731d9ea5ed98ae8448a6bc7209eb7663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSound: {fileID: 4732164963222350224}
+  projectileSound: {fileID: 0}
 --- !u!114 &7340486653551657160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +433,7 @@ MonoBehaviour:
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
   coinDelay: 0
   isDead: 0
+  takeDamageSound: {fileID: 0}
 --- !u!114 &7340486653551657163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,4 +953,4 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   fill: {fileID: 7340486653312656716}
   instance: {fileID: 0}
-  enemy: {fileID: 0}
+  enemy: {fileID: 7340486653551657157}
