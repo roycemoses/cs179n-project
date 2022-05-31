@@ -10,6 +10,7 @@ TagManager:
   - Armor
   - ClearRocks
   - PlayerFootstep
+  - ItemPickup
   layers:
   - Default
   - TransparentFX
