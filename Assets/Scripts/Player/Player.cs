@@ -6,6 +6,9 @@ using TMPro;
 [CreateAssetMenu(fileName = "Player", menuName = "DrackAdventures/Player", order = 0)]
 public class Player : ScriptableObject 
 {
+    public bool isInvincible = false;
+    public float invicibilityDurationSeconds;
+    public float invincibilityDeltaTime;
     public string prev_scene;
     public bool hasInstance = false;
     public int damage = 0;

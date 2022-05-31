@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
 {
     public Player player;
     public HealthBar healthBar;
+    public AudioSource deathSound;
+    public AudioSource takeDamageSound;
 
     private void Awake() {
         Debug.Log("AWAKE");
@@ -43,6 +45,7 @@ public class PlayerManager : MonoBehaviour
     {
         // player.equipHealth = player.baseHealth;
         // player.currHealth = player.baseHealth;
+        player.isInvincible = false;
         player.assignHealthBar(healthBar);
         player.healthBar.SetMaxHealth(player.currHealth);
         player.assignCoinCounterDisplay((TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI)));
@@ -92,10 +95,36 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (player.isInvincible) return;
         player.currHealth -= damage/player.dam_red;
         player.healthBar.SetHealth(player.currHealth);
         if (player.currHealth <= 0 && !player.isDead)
             DeathEffect();
+        else
+        {
+            takeDamageSound.Play();
+            StartCoroutine(StartInvinvibilityFrames());
+        }
+    }
+
+    private IEnumerator StartInvinvibilityFrames()
+    {
+        // Debug.Log("Player turned invincible!");
+        player.isInvincible = true;
+        Color originalColor = GetComponent<SpriteRenderer>().color;
+        Color red = Color.red;
+        for (float i = 0; i < player.invicibilityDurationSeconds; i += player.invincibilityDeltaTime)
+        {
+            Color currentColor = GetComponent<SpriteRenderer>().color;
+            if (currentColor == red)
+                GetComponent<SpriteRenderer>().color = originalColor;
+            else
+                GetComponent<SpriteRenderer>().color = red;
+            yield return new WaitForSeconds(player.invincibilityDeltaTime);
+        }
+        player.isInvincible = false;
+        // Debug.Log("Player is no longer invincible!");
+        GetComponent<SpriteRenderer>().color = originalColor;
     }
 
     public void AddLife(int lifeAdded)
@@ -112,6 +141,7 @@ public class PlayerManager : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = false;
+        deathSound.Play();
         StartCoroutine(DeathRotationCoroutine());
     }
 
