@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         }
         */
 
-        coinCounterDisplay.text = coins.ToString();
+        // coinCounterDisplay.text = coins.ToString();
     }
 
      
