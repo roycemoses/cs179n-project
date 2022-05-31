@@ -54,6 +54,11 @@ public class PlayerAttack : MonoBehaviour
             currentWeapon = weapons[currentWeaponIndex];
             playerFirepoint.GetComponent<SpriteRenderer>().enabled = true;
         }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            currentWeapon = null;
+            playerFirepoint.GetComponent<SpriteRenderer>().enabled = false;
+        }
         
         angle = PlayerShootCam.angle;
         // if (Input.GetButtonDown("Fire1"))
