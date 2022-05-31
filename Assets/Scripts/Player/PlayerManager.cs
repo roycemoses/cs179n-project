@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
 {
     public Player player;
     public HealthBar healthBar;
+    public AudioSource deathSound;
+    public AudioSource takeDamageSound;
 
     private void Awake() {
         Debug.Log("AWAKE");
@@ -99,7 +101,10 @@ public class PlayerManager : MonoBehaviour
         if (player.currHealth <= 0 && !player.isDead)
             DeathEffect();
         else
+        {
+            takeDamageSound.Play();
             StartCoroutine(StartInvinvibilityFrames());
+        }
     }
 
     private IEnumerator StartInvinvibilityFrames()
@@ -136,6 +141,7 @@ public class PlayerManager : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = false;
+        deathSound.Play();
         StartCoroutine(DeathRotationCoroutine());
     }
 
