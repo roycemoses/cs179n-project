@@ -48,7 +48,13 @@ public class UI_Script : MonoBehaviour
                 Slots[i].GetComponent<Image>().color = new Color(0,0,0, a);//reset other buttons
             }
         }
-        
-        
+        if (Input.GetKeyDown("c"))
+        {
+            for (int i = 0; i < Slots.Length; i++)
+            {
+                Slots[i].GetComponent<Image>().color = new Color(0, 0, 0, a);//reset other buttons
+            }
+        }
+
     }
 }

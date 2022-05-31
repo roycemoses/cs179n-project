@@ -17,7 +17,7 @@ public class PlayerHit : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("Hit " + collider.name);
+        // Debug.Log("Hit " + collider.name);
         if (!collider.gameObject.CompareTag("Player"))
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
