@@ -10,6 +10,32 @@ public class PlayerManager : MonoBehaviour
     public HealthBar healthBar;
 
     private void Awake() {
+        Debug.Log("AWAKE");
+    }
+
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Debug.Log("OnSceneLoaded: " + scene.name);
+        if (player.prev_scene != scene.name)
+        {
+            if (player.prev_scene == "House")
+                player.spawnPoint = GameObject.Find("FromHouseSpawn").transform;
+            else if (player.prev_scene == "Neighborhood" || player.prev_scene == "YardCutScene")
+            {
+                player.spawnPoint = GameObject.Find("FromNeighborhoodSpawn").transform;
+            }
+            else if (player.prev_scene == "HomeBase")
+                player.spawnPoint = GameObject.Find("FromHomeBaseSpawn").transform;
+        }
+        else
+        {
+            player.spawnPoint = GameObject.Find("PlayerSpawn").transform;
+        }
+        // Debug.Log(mode);
     }
 
     // Start is called before the first frame update
@@ -20,6 +46,13 @@ public class PlayerManager : MonoBehaviour
         player.assignHealthBar(healthBar);
         player.healthBar.SetMaxHealth(player.currHealth);
         player.assignCoinCounterDisplay((TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI)));
+        if (transform != null && player.spawnPoint != null)
+            transform.position = player.spawnPoint.position;    
+        // if (this == null)
+        // {
+        //     Debug.Log("assigning spawn to player");
+        //     transform.position = player.spawnPoint.position;
+        // }
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
         player.animator = GetComponent<Animator>();        
     }
@@ -35,13 +68,13 @@ public class PlayerManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Respawn();
                 player.currHealth = player.baseHealth;
                 player.isDead = false;
                 player.animator.SetBool("isDead", false);
-                GetComponent<PlayerMovement>().enabled = true;
+                // GetComponent<PlayerMovement>().enabled = true;
                 // GetComponent<SpriteRenderer>().enabled = true;
-                GetComponent<BoxCollider2D>().enabled = true;
+                // GetComponent<BoxCollider2D>().enabled = true;
+                Respawn();
             }
         }
         /*int oldval = equipHealth;
@@ -53,7 +86,8 @@ public class PlayerManager : MonoBehaviour
         }
         */
 
-        player.coinCounterDisplay.text = player.coins.ToString();
+        if (player.coinCounterDisplay != null)
+            player.coinCounterDisplay.text = player.coins.ToString();
     }
 
     public void TakeDamage(int damage)

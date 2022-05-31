@@ -32,6 +32,7 @@ public class MainMenuManager : MonoBehaviour
         player.takeDamageSound = takeDamage;
         player.deathSound = death;
         player.isDead = false;
+        player.prev_scene = "YardCutScene";
         SceneManager.LoadScene(newGameScene);
     }
 

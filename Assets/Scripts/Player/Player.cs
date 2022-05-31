@@ -6,6 +6,7 @@ using TMPro;
 [CreateAssetMenu(fileName = "Player", menuName = "DrackAdventures/Player", order = 0)]
 public class Player : ScriptableObject 
 {
+    public string prev_scene;
     public bool hasInstance = false;
     public int damage = 0;
     //public int maxHealth = 100;
