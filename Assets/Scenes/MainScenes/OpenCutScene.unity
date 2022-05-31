@@ -5027,6 +5027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487236273}
   - component: {fileID: 1487236272}
+  - component: {fileID: 1487236274}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -5075,6 +5076,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1487236274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487236271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3ec76e30a6a4a4c96d0d6a8ff5bd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutScene: {fileID: 1487236272}
+  timeToSkipTo: 620
 --- !u!1 &1503498163
 GameObject:
   m_ObjectHideFlags: 0

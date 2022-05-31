@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3201709878794754465, guid: 75702594e5cf00b4e949316ef5543261, type: 3}
+  m_Sprite: {fileID: -1401874176895988017, guid: 18a04ed73dc4ea54fb31be009b2797f9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11917,7 +11917,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.6005516
+      m_AnimationSpeed: 2.1848383
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -4, z: 0}
@@ -11947,7 +11947,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.6338878
+      m_AnimationSpeed: 2.9488676
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 7, z: 0}
@@ -11957,7 +11957,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.3603725
+      m_AnimationSpeed: 2.8227844
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 7, z: 0}
@@ -11987,7 +11987,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.3385763
+      m_AnimationSpeed: 2.4303994
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -16418,6 +16418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958135273}
   - component: {fileID: 1958135272}
+  - component: {fileID: 1958135274}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -16466,6 +16467,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958135274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958135271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3ec76e30a6a4a4c96d0d6a8ff5bd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutScene: {fileID: 1958135272}
+  timeToSkipTo: 955
 --- !u!1 &1965565828
 GameObject:
   m_ObjectHideFlags: 0
