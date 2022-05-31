@@ -104,7 +104,7 @@ public class PlayerManager : MonoBehaviour
 
     private IEnumerator StartInvinvibilityFrames()
     {
-        Debug.Log("Player turned invincible!");
+        // Debug.Log("Player turned invincible!");
         player.isInvincible = true;
         Color originalColor = GetComponent<SpriteRenderer>().color;
         Color red = Color.red;
@@ -118,7 +118,7 @@ public class PlayerManager : MonoBehaviour
             yield return new WaitForSeconds(player.invincibilityDeltaTime);
         }
         player.isInvincible = false;
-        Debug.Log("Player is no longer invincible!");
+        // Debug.Log("Player is no longer invincible!");
         GetComponent<SpriteRenderer>().color = originalColor;
     }
 

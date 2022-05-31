@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour//perhaps abstract
 {
-    public bool isInvincible = false;
+    public bool isTakingDamage = false;
     public float invicibilityDurationSeconds = 1;
     public float invincibilityDeltaTime = 0.2f;
     public int damage = 0;
@@ -21,6 +21,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public GameObject coin;
     public int coinDelay;
     public bool isDead = false;
+    public Color originalColor;
 
     public AudioSource takeDamageSound;
 
@@ -28,6 +29,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     {
         currHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        originalColor = GetComponent<SpriteRenderer>().color;
     }
     // Update is called once per frame
     void Update()
@@ -39,7 +41,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
 
     public void TakeDamage(int damage)
     {
-        if (isInvincible) return;
+        if (isTakingDamage) return;
         takeDamageSound.Play();
         currHealth -= damage;
         healthbar.SetHealth(currHealth);
@@ -57,20 +59,25 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
 
     private IEnumerator StartInvinvibilityFrames()
     {
-        isInvincible = true;
-        Color originalColor = GetComponent<SpriteRenderer>().color;
+        isTakingDamage = true;
+        // Color originalColor = GetComponent<SpriteRenderer>().color;
         Color red = Color.red;
         for (float i = 0; i < invicibilityDurationSeconds; i += invincibilityDeltaTime)
         {
             Color currentColor = GetComponent<SpriteRenderer>().color;
             if (currentColor == red)
-                GetComponent<SpriteRenderer>().color = originalColor;
+                GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;
             else
                 GetComponent<SpriteRenderer>().color = red;
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
-        isInvincible = false;
-        GetComponent<SpriteRenderer>().color = originalColor;
+        isTakingDamage = false;
+        if (GetComponent<EnemyAttack>().exitedAttackEarly)
+        {
+            GetComponent<EnemyAttack>().isAttacking = false;
+            GetComponent<EnemyAttack>().nextAttackTime = Time.time + 1f / attackRate;
+        }
+        GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;      
     }
     
     private void DeathEffect()
