@@ -6,19 +6,25 @@ public class TreeAttack : MonoBehaviour
 {
 
     float nextAttackTime = 0f;
-    float movingTime = 0f;
-    float chargeTime = 2f;
+
+    public float surprisedSeconds = 1f;
+    public float chargeSeconds = 1.5f;
+    public float movingSeconds = 1f;
+    public float idleAfterAttackSeconds = 0.5f;
     public float speed = 250f;
-    public float movingTimeFactor = 3f;
-    public int damage;
+    public int damage = 15;
 
     private Animator animator;
 
     public AudioSource projectileSound;
 
-    bool inRange = false;
-    public bool isMoving;
-    public bool isPreparing;
+    public bool inRange = false;
+    public bool isAttacking = false;
+    public bool isMoving = false;
+    public bool isPreparing = false;
+    public bool isSleeping = true;
+    public bool isSurprised = false;
+    public bool isInIdleState = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,45 +38,65 @@ public class TreeAttack : MonoBehaviour
         // check if player is in enemy's attack range
         Vector3 playerPos = GameObject.Find("Player").transform.position;
         float distance = Vector2.Distance(playerPos, transform.position);
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (distance > GetComponent<Enemy>().attackRange)
-            inRange = false;
-        else
-            inRange = true;
-
-        if (inRange)
         {
-            animator.SetBool("isSleeping", false);
-            isPreparing = true;
-            animator.SetBool("isPreparing", true);
-            chargeTime -= Time.deltaTime;
-            if (chargeTime < 0)
-            {   
-                isPreparing = false;
-                animator.SetBool("isPreparing", false);
+            inRange = false;
+            if (isInIdleState)
+            {
+                isSleeping = true;
+                animator.SetBool("isSleeping", true);
+                isInIdleState = false;
+                animator.SetBool("isInIdleState", false);
             }
         }
-        
-        if (!inRange)
+        else
         {
-            animator.SetBool("isSleeping", true);
-            isPreparing = false;
-            animator.SetBool("isPreparing", false);
+            inRange = true;
         }
 
-
-        if (Time.time >= nextAttackTime && inRange && !isPreparing)
+        if (Time.time >= nextAttackTime && inRange && !isAttacking)
         {
+            Debug.Log("Attacking...");   
+            StartCoroutine(Attack());   
+        }
+    }
+
+
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+        if (isSleeping)
+        {
+            Debug.Log("Surprised");
+            isSleeping = false;
+            animator.SetBool("isSleeping", false);
+            yield return new WaitForSeconds(surprisedSeconds);
+        }
+
+        if (!inRange)
+        {
+            isPreparing = false;
+            animator.SetBool("isPreparing", false);  
+        }
+        else
+        {   
+            isPreparing = true;
+            animator.SetBool("isPreparing", true);  
+
+            yield return new WaitForSeconds(chargeSeconds);
+
             Debug.Log("Attacking");
-            projectileSound.Play();
-            nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
-            movingTime = Time.time + 1f / (GetComponent<Enemy>().attackRate * movingTimeFactor);
-            rb.drag = 0f;
-            rb.AddForce((playerPos - transform.position).normalized * speed, ForceMode2D.Force);
-            
             isMoving = true;
             animator.SetBool("isMoving", true);
-            chargeTime = 2f;
+            isPreparing = false;
+            animator.SetBool("isPreparing", false);
+
+            projectileSound.Play();
+            Vector3 playerPos = GameObject.Find("Player").transform.position;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.drag = 0f;
+            rb.AddForce((playerPos - transform.position).normalized * speed, ForceMode2D.Force);
+        
 
             Vector2 direction = transform.position - playerPos;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  
@@ -97,17 +123,25 @@ public class TreeAttack : MonoBehaviour
                 animator.SetFloat("Xinput", 0f);
                 animator.SetFloat("Yinput", 1.0f);
                 // Debug.Log("UP");   
-            }
-        }
+            }        
 
-        if (Time.time >= movingTime && isMoving)
-        {
-            Debug.Log("Drag!");
+            yield return new WaitForSeconds(movingSeconds);
+
             rb.drag = 3f;
+
             isMoving = false;
             animator.SetBool("isMoving", false);
         }
+        
+        yield return new WaitForSeconds(idleAfterAttackSeconds);
+
+        isInIdleState = true;
+        animator.SetBool("isInIdleState", true);
+
+        nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
+        isAttacking = false;
     }
+
 
     void OnTriggerEnter2D(Collider2D col)
     {

@@ -550,12 +550,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bad3dc2960902408453ec252c213d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
-  movingTimeFactor: 3
-  damage: 5
+  surprisedSeconds: 1
+  chargeSeconds: 1.5
+  movingSeconds: 1
+  idleAfterAttackSeconds: 0.5
+  speed: 250
+  damage: 15
   projectileSound: {fileID: 5329187883472449429}
+  inRange: 0
+  isAttacking: 0
   isMoving: 0
   isPreparing: 0
+  isSleeping: 1
+  isSurprised: 0
+  isInIdleState: 0
 --- !u!50 &5210953306920979211
 Rigidbody2D:
   serializedVersion: 4
@@ -595,7 +603,7 @@ MonoBehaviour:
   maxHealth: 100
   currHealth: 100
   attackRange: 6
-  attackRate: 0.35
+  attackRate: 0.5
   healthbar: {fileID: 6934640327978697028}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
