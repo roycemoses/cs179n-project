@@ -27,7 +27,8 @@ MonoBehaviour:
   isDead: 0
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
-  coins: 10
+  coins: 9253
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
+  isPickingUpCoin: 1

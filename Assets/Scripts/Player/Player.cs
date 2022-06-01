@@ -26,7 +26,7 @@ public class Player : ScriptableObject
     public TextMeshProUGUI coinCounterDisplay;
     public AudioSource takeDamageSound;
     public AudioSource deathSound;
-
+    public bool isPickingUpCoin = false;
     public void assignHealthBar(HealthBar healthBar)
     {
         this.healthBar = healthBar;
