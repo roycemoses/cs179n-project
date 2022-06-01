@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
     private void Awake() {
         if (instance == null) {
             instance = GameObject.Find("Canvas");
-            Debug.Log(instance);
+            // Debug.Log(instance);
             DontDestroyOnLoad(instance);
         }
         else

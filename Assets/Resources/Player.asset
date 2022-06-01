@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  isInvincible: 0
+  invicibilityDurationSeconds: 1
+  invincibilityDeltaTime: 0.2
+  prev_scene: HomeBase
   hasInstance: 1
   damage: 25
   baseHealth: 100

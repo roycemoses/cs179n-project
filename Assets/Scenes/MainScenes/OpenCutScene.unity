@@ -439,7 +439,6 @@ GameObject:
   - component: {fileID: 540560290}
   - component: {fileID: 540560289}
   - component: {fileID: 540560283}
-  - component: {fileID: 540560288}
   - component: {fileID: 540560287}
   - component: {fileID: 540560286}
   - component: {fileID: 540560285}
@@ -559,33 +558,6 @@ MonoBehaviour:
   projectileSound: {fileID: 0}
   swordSound: {fileID: 0}
   playerFirepoint: {fileID: 0}
---- !u!114 &540560288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540560282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasInstance: 0
-  damage: 20
-  baseHealth: 100
-  equipHealth: 0
-  currHealth: 0
-  healthBar: {fileID: 0}
-  oldEquip: 0
-  dam_red: 1
-  isDead: 0
-  spawnPoint: {fileID: 0}
-  animator: {fileID: 0}
-  coins: 0
-  coinCounterDisplay: {fileID: 0}
-  takeDamageSound: {fileID: 0}
-  deathSound: {fileID: 0}
 --- !u!212 &540560289
 SpriteRenderer:
   m_ObjectHideFlags: 0

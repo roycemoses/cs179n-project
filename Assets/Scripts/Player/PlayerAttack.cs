@@ -54,6 +54,11 @@ public class PlayerAttack : MonoBehaviour
             currentWeapon = weapons[currentWeaponIndex];
             playerFirepoint.GetComponent<SpriteRenderer>().enabled = true;
         }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            currentWeapon = null;
+            playerFirepoint.GetComponent<SpriteRenderer>().enabled = false;
+        }
         
         angle = PlayerShootCam.angle;
         // if (Input.GetButtonDown("Fire1"))
@@ -70,7 +75,7 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     animator.SetFloat("Xinput", -1.0f);
                     animator.SetFloat("Yinput", 0f);
-                    Debug.Log("LEFT");
+                    // Debug.Log("LEFT");
                     swordSound.Play();
                 }
                 else if ( Input.GetButtonDown("Fire1") && ((angle <= 45 && angle >= 0) || (angle >= -45 && angle <= 0)) ) // RIGHT
@@ -80,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     animator.SetFloat("Xinput", 1.0f);
                     animator.SetFloat("Yinput", 0f);
-                    Debug.Log("RIGHT");
+                    // Debug.Log("RIGHT");
                     swordSound.Play();
                 }
                 else if (Input.GetButtonDown("Fire1") && angle <= 135 && angle >= 45) // UP
@@ -90,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", 1f);
-                    Debug.Log("UP");       
+                    // Debug.Log("UP");       
                     swordSound.Play();  
                 }
                 else if (Input.GetButtonDown("Fire1") && angle >= -135 && angle <= -45) // DOWN
@@ -100,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
                     nextAttackTime = Time.time + 1f / attackRate;
                     animator.SetFloat("Xinput", 0f);
                     animator.SetFloat("Yinput", -1f);
-                    Debug.Log("DOWN");   
+                    // Debug.Log("DOWN");   
                     swordSound.Play();
                 }
             }
