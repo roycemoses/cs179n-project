@@ -47,6 +47,7 @@ public class TreeAttack : MonoBehaviour
                 animator.SetBool("isSleeping", true);
                 isInIdleState = false;
                 animator.SetBool("isInIdleState", false);
+                nextAttackTime = 0f;
             }
         }
         else
