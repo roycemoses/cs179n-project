@@ -664,19 +664,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surprisedSeconds: 1
-  chargeSeconds: 1.5
-  movingSeconds: 1
-  forcedIdleSeconds: 0.5
-  speed: 250
-  damage: 15
-  meleeAttackSound: {fileID: 7921516413670173798}
-  inRange: 0
+  forcedIdleSeconds: 1
+  waitTime: 0
+  startWaitTime: 2
+  chargeSeconds: 0.5
+  attackAnimationTime: 0.5
+  damage: 20
+  detectRange: 8
+  attackTriggerRange: 0.75
   isAttacking: 0
-  isMoving: 0
-  isPreparing: 0
-  isSleeping: 1
-  isSurprised: 0
-  isInIdleState: 0
+  inRange: 0
+  speed: 2.5
+  moveSpots: []
+  meleeAttackSound: {fileID: 7921516413670173798}
+  player: {fileID: 0}
+  hitboxPrefab: {fileID: 197775611961307479, guid: a375007e7072f5e47882e2e8ea22d009, type: 3}
 --- !u!114 &1811631258293320491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,18 +691,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4891a0cc9dfe03f439ee5da693e4c3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTakingDamage: 0
+  invicibilityDurationSeconds: 1
+  invincibilityDeltaTime: 0.2
   damage: 10
   xp: 0
   gold: 0
   maxHealth: 100
   currHealth: 100
   attackRange: 6
-  attackRate: 0.5
+  attackRate: 2
   healthbar: {fileID: 4910963958091383479}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
   coinDelay: 0
   isDead: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   takeDamageSound: {fileID: 7508643243186186402}
 --- !u!82 &7508643243186186402
 AudioSource:
