@@ -8,8 +8,36 @@ public class PlayerManager : MonoBehaviour
 {
     public Player player;
     public HealthBar healthBar;
+    public AudioSource deathSound;
+    public AudioSource takeDamageSound;
 
     private void Awake() {
+        Debug.Log("AWAKE");
+    }
+
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Debug.Log("OnSceneLoaded: " + scene.name);
+        if (player.prev_scene != scene.name)
+        {
+            if (player.prev_scene == "House")
+                player.spawnPoint = GameObject.Find("FromHouseSpawn").transform;
+            else if (player.prev_scene == "Neighborhood" || player.prev_scene == "YardCutScene")
+            {
+                player.spawnPoint = GameObject.Find("FromNeighborhoodSpawn").transform;
+            }
+            else if (player.prev_scene == "HomeBase")
+                player.spawnPoint = GameObject.Find("FromHomeBaseSpawn").transform;
+        }
+        else
+        {
+            player.spawnPoint = GameObject.Find("PlayerSpawn").transform;
+        }
+        // Debug.Log(mode);
     }
 
     // Start is called before the first frame update
@@ -17,9 +45,17 @@ public class PlayerManager : MonoBehaviour
     {
         // player.equipHealth = player.baseHealth;
         // player.currHealth = player.baseHealth;
+        player.isInvincible = false;
         player.assignHealthBar(healthBar);
         player.healthBar.SetMaxHealth(player.currHealth);
         player.assignCoinCounterDisplay((TextMeshProUGUI)FindObjectOfType(typeof(TextMeshProUGUI)));
+        if (transform != null && player.spawnPoint != null)
+            transform.position = player.spawnPoint.position;    
+        // if (this == null)
+        // {
+        //     Debug.Log("assigning spawn to player");
+        //     transform.position = player.spawnPoint.position;
+        // }
         // Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer("Enemies"));
         player.animator = GetComponent<Animator>();        
     }
@@ -35,13 +71,13 @@ public class PlayerManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Respawn();
                 player.currHealth = player.baseHealth;
                 player.isDead = false;
                 player.animator.SetBool("isDead", false);
-                GetComponent<PlayerMovement>().enabled = true;
+                // GetComponent<PlayerMovement>().enabled = true;
                 // GetComponent<SpriteRenderer>().enabled = true;
-                GetComponent<BoxCollider2D>().enabled = true;
+                // GetComponent<BoxCollider2D>().enabled = true;
+                Respawn();
             }
         }
         /*int oldval = equipHealth;
@@ -53,15 +89,42 @@ public class PlayerManager : MonoBehaviour
         }
         */
 
-        player.coinCounterDisplay.text = player.coins.ToString();
+        if (player.coinCounterDisplay != null)
+            player.coinCounterDisplay.text = player.coins.ToString();
     }
 
     public void TakeDamage(int damage)
     {
+        if (player.isInvincible) return;
         player.currHealth -= damage/player.dam_red;
         player.healthBar.SetHealth(player.currHealth);
         if (player.currHealth <= 0 && !player.isDead)
             DeathEffect();
+        else
+        {
+            takeDamageSound.Play();
+            StartCoroutine(StartInvinvibilityFrames());
+        }
+    }
+
+    private IEnumerator StartInvinvibilityFrames()
+    {
+        // Debug.Log("Player turned invincible!");
+        player.isInvincible = true;
+        Color originalColor = GetComponent<SpriteRenderer>().color;
+        Color red = Color.red;
+        for (float i = 0; i < player.invicibilityDurationSeconds; i += player.invincibilityDeltaTime)
+        {
+            Color currentColor = GetComponent<SpriteRenderer>().color;
+            if (currentColor == red)
+                GetComponent<SpriteRenderer>().color = originalColor;
+            else
+                GetComponent<SpriteRenderer>().color = red;
+            yield return new WaitForSeconds(player.invincibilityDeltaTime);
+        }
+        player.isInvincible = false;
+        // Debug.Log("Player is no longer invincible!");
+        GetComponent<SpriteRenderer>().color = originalColor;
     }
 
     public void AddLife(int lifeAdded)
@@ -78,6 +141,7 @@ public class PlayerManager : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = false;
+        deathSound.Play();
         StartCoroutine(DeathRotationCoroutine());
     }
 

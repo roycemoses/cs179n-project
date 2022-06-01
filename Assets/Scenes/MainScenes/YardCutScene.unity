@@ -2139,7 +2139,6 @@ GameObject:
   - component: {fileID: 779796021}
   - component: {fileID: 779796020}
   - component: {fileID: 779796014}
-  - component: {fileID: 779796019}
   - component: {fileID: 779796018}
   - component: {fileID: 779796017}
   - component: {fileID: 779796016}
@@ -2259,33 +2258,6 @@ MonoBehaviour:
   projectileSound: {fileID: 0}
   swordSound: {fileID: 0}
   playerFirepoint: {fileID: 0}
---- !u!114 &779796019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779796013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401175a20e0322c40aace56a1fcee443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasInstance: 0
-  damage: 20
-  baseHealth: 100
-  equipHealth: 0
-  currHealth: 0
-  healthBar: {fileID: 0}
-  oldEquip: 0
-  dam_red: 1
-  isDead: 0
-  spawnPoint: {fileID: 0}
-  animator: {fileID: 0}
-  coins: 0
-  coinCounterDisplay: {fileID: 0}
-  takeDamageSound: {fileID: 0}
-  deathSound: {fileID: 0}
 --- !u!212 &779796020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11945,7 +11917,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.8677337
+      m_AnimationSpeed: 2.6005516
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -4, z: 0}
@@ -11975,7 +11947,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.4438324
+      m_AnimationSpeed: 2.6338878
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 7, z: 0}
@@ -11985,7 +11957,7 @@ Tilemap:
       - {fileID: 1104954351199465170, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: -605678584673504720, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 8414243598985138402, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.9185693
+      m_AnimationSpeed: 2.3603725
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 7, z: 0}
@@ -12015,7 +11987,7 @@ Tilemap:
       - {fileID: 99991098461884850, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 5716604089760242763, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
       - {fileID: 7382005939871116393, guid: a510fdbd5a864db418c830cc51c6dc9b, type: 3}
-      m_AnimationSpeed: 2.9241068
+      m_AnimationSpeed: 2.3385763
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
