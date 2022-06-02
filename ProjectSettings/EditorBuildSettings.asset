@@ -53,10 +53,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/HomeBoatFight.unity
     guid: c7358a33ca2db1844ac65eae1f211ed6
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/FirstIslandPart2.unity
+    guid: ae75ee9a7ce08414698032a85a7c7fda
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/FirstIslandPart3.unity
+    guid: 5659c7e2fffc7054193b4e549a4e2f63
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: 5bc66c3e1ea278a43aa1f3121344bfa7
   - enabled: 0
