@@ -10,7 +10,6 @@ TagManager:
   - Armor
   - ClearRocks
   - PlayerFootstep
-  - Dirt
   - ItemPickup
   layers:
   - Default
@@ -28,7 +27,7 @@ TagManager:
   - PlayerTriggers
   - EnemyTriggers
   - Floor
-  - 
+  - EnemyNotCollide
   - 
   - 
   - 

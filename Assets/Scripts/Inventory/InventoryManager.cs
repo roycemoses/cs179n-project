@@ -15,6 +15,10 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
+    public Player player;
+    public InventoryItem HP;
+    public InventoryItem tier2HP;
+    public InventoryItem tier3HP;
     public InventoryItem currentItem;
     public AudioSource openInventorySound;
     public AudioSource closeInventorySound;
@@ -70,6 +74,36 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.Log("Pressed I");
             OpenInventory();
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if(!isOpen && player.currHealth != player.equipHealth)
+            {
+                currentItem = HP;
+                UseButtonPressed();
+
+            }
+
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if(!isOpen && player.currHealth != player.equipHealth)
+            {
+                currentItem = tier2HP;
+                UseButtonPressed();
+
+            }
+
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            if(!isOpen && player.currHealth != player.equipHealth)
+            {
+                currentItem = tier3HP;
+                UseButtonPressed();
+
+            }
+
         }
     }
 

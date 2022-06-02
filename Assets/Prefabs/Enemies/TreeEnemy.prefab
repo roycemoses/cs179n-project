@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 4413457367784323288}
   - component: {fileID: 5489881550687546193}
   - component: {fileID: 5329187883472449429}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TreeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bad3dc2960902408453ec252c213d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeUpColor: {r: 0, g: 0.026608944, b: 1, a: 0}
+  chargeUpColor: {r: 1, g: 0, b: 0, a: 0}
   surprisedSeconds: 1
   chargeSeconds: 1.5
   chargeUpDeltaTime: 0.3
@@ -613,6 +613,7 @@ MonoBehaviour:
   healthbar: {fileID: 6934640327978697028}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
+  potion: {fileID: 7157185478579485117, guid: e9804ce811677470f998cb4be976e161, type: 3}
   coinDelay: 0
   isDead: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
