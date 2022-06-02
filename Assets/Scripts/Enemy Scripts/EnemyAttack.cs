@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
-    float nextAttackTime = 0f;
+    public Color chargeUpColor;
+    public float chargeUpDurationSeconds = 2;
+    public float chargeUpDeltaTime = 0.2f;
+    public bool isAttacking = false;
+    public float nextAttackTime = 0f;
     bool inRange = false;
-
+    public bool exitedAttackEarly = false;
     private Animator animator;
-
     public AudioSource projectileSound;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+        projectileSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -22,17 +27,14 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         // check if player is in enemy's attack range
-        Vector3 playerPos = GameObject.Find("Player").transform.position;
+        Vector3 playerPos = player.transform.position;
         float distance = Vector2.Distance(playerPos, transform.position);
         if (distance > GetComponent<Enemy>().attackRange)
             inRange = false;
         else
             inRange = true;
-        if (Time.time >= nextAttackTime && inRange)
+        if (Time.time >= nextAttackTime && inRange && !isAttacking)
         {
-            projectileSound.Play();
-            gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
-            nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
             Vector2 direction = transform.position - playerPos;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;  
             if ( ((angle >= 135 && angle <= 180) || (angle <= -135 && angle >= -180)) ) // RIGHT
@@ -59,6 +61,42 @@ public class EnemyAttack : MonoBehaviour
                 animator.SetFloat("Yinput", 1.0f);
                 // Debug.Log("UP");   
             }
+            StartCoroutine(Attack());
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+        Debug.Log("Enemy is charging up an attack!");
+        // int numFrames = chargeUpDurationSeconds / chargeUpDeltaTime;
+        // Color originalColor = GetComponent<SpriteRenderer>().color;
+        Color orange = chargeUpColor * 255f;
+        // GetComponent<SpriteRenderer>().color = orange;
+        // yield return new WaitForSeconds(chargeUpDurationSeconds);
+        for (float i = 1f; i >= 0; i -= chargeUpDeltaTime)
+        {
+            if (GetComponent<Enemy>().isTakingDamage)
+            {
+                isAttacking = false;
+                nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
+                GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;
+                yield break;
+            }
+            Color c = GetComponent<SpriteRenderer>().color;
+            if (i >= orange.r / 255f)
+                c.r = i;
+            if (i >= orange.g / 255f)
+                c.g = i;
+            if (i >= orange.b / 255f)
+                c.b = i;
+            GetComponent<SpriteRenderer>().color = c;
+            yield return new WaitForSeconds(chargeUpDeltaTime);
+        }
+        projectileSound.Play();
+        gameObject.GetComponentInChildren<EnemyShoot>().Shoot();
+        isAttacking = false;
+        nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
+        GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;
     }
 }

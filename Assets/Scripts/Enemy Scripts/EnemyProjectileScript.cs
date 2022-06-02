@@ -8,7 +8,7 @@ public class EnemyProjectileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     { 
-        if (!collider.gameObject.CompareTag("Enemy") && LayerMask.LayerToName(collider.gameObject.layer) != "Floor")
+        if (!collider.gameObject.CompareTag("Enemy") && LayerMask.LayerToName(collider.gameObject.layer) != "Floor" && !collider.gameObject.CompareTag("ItemPickup"))
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             // Destroy(effect, 5f);
@@ -16,7 +16,7 @@ public class EnemyProjectileScript : MonoBehaviour
             if (collider.gameObject.CompareTag("Player"))
             {
                 int damage = gameObject.transform.parent.gameObject.GetComponent<Enemy>().damage;
-                collider.gameObject.GetComponent<Player>().TakeDamage(damage);
+                collider.gameObject.GetComponent<PlayerManager>().TakeDamage(damage);
             }
             if (!collider.gameObject.CompareTag("Projectile") && !collider.gameObject.CompareTag("PlayerTrigger"))
                 Destroy(gameObject);

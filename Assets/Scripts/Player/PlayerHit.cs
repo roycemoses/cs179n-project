@@ -17,7 +17,7 @@ public class PlayerHit : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("Hit " + collider.name);
+        // Debug.Log("Hit " + collider.name);
         if (!collider.gameObject.CompareTag("Player"))
         {
             // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
@@ -25,7 +25,7 @@ public class PlayerHit : MonoBehaviour
             // Debug.Log(collision.collider);
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                int damage = GameObject.Find("Player").GetComponent<Player>().damage;
+                int damage = GameObject.Find("Player").GetComponent<PlayerManager>().player.damage;
                 collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             }                    
         }

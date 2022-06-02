@@ -11,6 +11,7 @@ TagManager:
   - ClearRocks
   - PlayerFootstep
   - Dirt
+  - ItemPickup
   layers:
   - Default
   - TransparentFX
