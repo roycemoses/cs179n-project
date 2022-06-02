@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110682848bfb37e478a104aa0f2b3ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 11400000, guid: 78d4ab441e3978b47a56fbf4d75ed04c, type: 2}
   slider: {fileID: 439018245}
   gradient:
     serializedVersion: 2
@@ -1782,6 +1782,10 @@ MonoBehaviour:
   inventoryPanel: {fileID: 0}
   descriptionText: {fileID: 0}
   useButton: {fileID: 0}
+  player: {fileID: 0}
+  HP: {fileID: 0}
+  tier2HP: {fileID: 0}
+  tier3HP: {fileID: 0}
   currentItem: {fileID: 0}
   openInventorySound: {fileID: 738721141}
   closeInventorySound: {fileID: 738721140}
@@ -1922,6 +1926,9 @@ MonoBehaviour:
   Slots:
   - {fileID: 685846340}
   - {fileID: 664796629}
+  HPButton: {fileID: 0}
+  tier2HPButton: {fileID: 0}
+  tier3HPButton: {fileID: 0}
 --- !u!114 &783870734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,6 +2680,10 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1474874468}
   descriptionText: {fileID: 840093727}
   useButton: {fileID: 855467245}
+  player: {fileID: 0}
+  HP: {fileID: 0}
+  tier2HP: {fileID: 0}
+  tier3HP: {fileID: 0}
   currentItem: {fileID: 0}
   openInventorySound: {fileID: 0}
   closeInventorySound: {fileID: 0}

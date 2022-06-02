@@ -443,6 +443,7 @@ MonoBehaviour:
   healthbar: {fileID: 1955154138993336970}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
+  potion: {fileID: 7157185478579485117, guid: e9804ce811677470f998cb4be976e161, type: 3}
   coinDelay: 0
   isDead: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}

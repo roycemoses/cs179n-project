@@ -21,9 +21,12 @@ public class HealthReaction : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && ((hero.currHealth + potion_inc) < hero.equipHealth))
+        if(other.tag == "Player" && (hero.currHealth != hero.equipHealth))
         {
-            hero.currHealth = hero.currHealth + potion_inc;
+            if (hero.currHealth + potion_inc > hero.equipHealth)
+                hero.currHealth = hero.equipHealth;
+            else
+                hero.currHealth = hero.currHealth + potion_inc;
             hero.healthBar.SetHealth(hero.currHealth);
             //hero.dam_red = 2;
             Destroy(this.gameObject);

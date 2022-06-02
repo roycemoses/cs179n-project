@@ -28,7 +28,7 @@ public class UI_Script : MonoBehaviour
         {
             Slots[0].GetComponent<Image>().color = new Color(0, 0, 0);
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (i == 0)
                 {
@@ -42,7 +42,7 @@ public class UI_Script : MonoBehaviour
         {
             Slots[1].GetComponent<Image>().color = new Color(0, 0, 0);//change
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (i == 1)//change
                 {

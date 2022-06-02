@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 32
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15,27 +15,19 @@ MonoBehaviour:
   isInvincible: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
-<<<<<<< HEAD
-  prev_scene: FirstIslandPart2
-=======
-  prev_scene: Buy_Equip_Potion
->>>>>>> origin/Test
-  hasInstance: 1
+  prev_scene: 
+  hasInstance: 0
   damage: 25
   baseHealth: 100
   equipHealth: 100
-  currHealth: 100
+  currHealth: 40
   healthBar: {fileID: 9088441917954142680, guid: 2b9708f4283c83b4990436dab2ded182, type: 3}
   oldEquip: 0
   dam_red: 1
-  isDead: 1
+  isDead: 0
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
-<<<<<<< HEAD
-  coins: 100
-=======
-  coins: 985
->>>>>>> origin/Test
+  coins: 965
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
