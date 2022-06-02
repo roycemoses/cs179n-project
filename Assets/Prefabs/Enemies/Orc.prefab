@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surprisedSeconds: 1
+  startSurprisedSeconds: 1
   forcedIdleSeconds: 1
   waitTime: 0
   startWaitTime: 2

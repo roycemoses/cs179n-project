@@ -7,15 +7,17 @@ public class OrcAttack : MonoBehaviour
 
     float nextAttackTime = 0f;
 
-    public float surprisedSeconds = 1f;
-    public float forcedIdleSeconds = 0.5f;
-    public float waitTime = 0f;
-    public float startWaitTime = 2f;
-    public float chargeSeconds = 1f;
-    public float attackAnimationTime = 1f;
-    public int damage = 15;
-    public float detectRange = 10f;
-    public float attackTriggerRange = 1f;
+    
+    public float surprisedSeconds;
+    public float startSurprisedSeconds;
+    public float forcedIdleSeconds;
+    public float waitTime;
+    public float startWaitTime;
+    public float chargeSeconds;
+    public float attackAnimationTime;
+    public int damage;
+    public float detectRange;
+    public float attackTriggerRange;
     public bool isAttacking;
     public bool inRange;
     public float speed;
@@ -188,7 +190,7 @@ public class OrcAttack : MonoBehaviour
         }
         else if (animator.GetBool("Following"))
         {            
-            surprisedSeconds = 0;
+            surprisedSeconds = startSurprisedSeconds;
 
             Vector2 moveDirection = transform.position - playerPos;
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
@@ -233,9 +235,9 @@ public class OrcAttack : MonoBehaviour
         }
         else if (animator.GetBool("Forced Idle"))
         {
+            surprisedSeconds = startSurprisedSeconds;
             // orc to player direction
             // Vector2 direction = transform.position - playerPos;
-
         }
     }
 
