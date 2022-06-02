@@ -15,9 +15,7 @@ public class OrcAttack : MonoBehaviour
     public float startWaitTime;
     public float chargeSeconds;
     public float attackAnimationTime;
-    public int damage;
     public float detectRange;
-    public float attackTriggerRange;
     public bool isAttacking;
     public bool inRange;
     public float speed;
@@ -34,6 +32,7 @@ public class OrcAttack : MonoBehaviour
     private Vector3 playerPos;
 
     public GameObject hitboxPrefab;
+    public float startHitboxDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -222,10 +221,10 @@ public class OrcAttack : MonoBehaviour
                 animator.SetBool("Patrol Moving", true);
             }
             
-            if (Vector2.Distance(playerPos, transform.position) > attackTriggerRange) // if the distance between the orc and player is too far to attack, orc follows!
+            if (Vector2.Distance(playerPos, transform.position) > GetComponent<Enemy>().attackRange) // if the distance between the orc and player is too far to attack, orc follows!
                 transform.position = Vector2.MoveTowards(transform.position, playerPos, speed * Time.deltaTime);
 
-            if (Time.time >= nextAttackTime && Vector2.Distance(playerPos, transform.position) <= attackTriggerRange && !isAttacking) // The Orc has no cooldown, Orc is close enough, and is not attacking: Start the Attack Coroutine!
+            if (Time.time >= nextAttackTime && Vector2.Distance(playerPos, transform.position) <= GetComponent<Enemy>().attackRange && !isAttacking) // The Orc has no cooldown, Orc is close enough, and is not attacking: Start the Attack Coroutine!
             {
                 Debug.Log("Attacking...");
                 animator.SetBool("Following", false);
@@ -269,8 +268,8 @@ public class OrcAttack : MonoBehaviour
             animator.SetFloat("Yinput", 1.0f);
         }
 
-
-        GameObject hitbox = Instantiate(hitboxPrefab, transform.position - lookDirection * 1.25f, Quaternion.Euler(0, 0, angle+90f));
+        Vector3 pos = playerPos;
+        GameObject hitbox = Instantiate(hitboxPrefab, pos, Quaternion.Euler(0, 0, angle+90f));
         hitbox.transform.parent = gameObject.transform;
         hitbox.GetComponent<BoxCollider2D>().enabled = false;
         hitbox.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.55f); // change opacity to 55%
@@ -302,5 +301,21 @@ public class OrcAttack : MonoBehaviour
 
         nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
         isAttacking = false;
+    }
+
+    // private void OnTriggerEnter2D(Collider2D col) {
+    //     if (col.CompareTag("Player"))
+    //     {
+    //         Debug.Log("took dmg");
+    //         col.gameObject.GetComponent<PlayerManager>().TakeDamage(GetComponent<Enemy>().damage);
+    //     }
+    // }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.collider.CompareTag("Player"))
+        {
+            Debug.Log("took dmg");
+            col.collider.gameObject.GetComponent<PlayerManager>().TakeDamage(GetComponent<Enemy>().damage);
+        }
     }
 }

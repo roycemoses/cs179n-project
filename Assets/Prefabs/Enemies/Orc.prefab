@@ -472,11 +472,11 @@ GameObject:
   - component: {fileID: 1676493064003497423}
   - component: {fileID: 11108748233537106}
   - component: {fileID: 1356547730234531618}
-  - component: {fileID: 5317269892376271279}
   - component: {fileID: 5353732283634312832}
   - component: {fileID: 1811631258293320491}
   - component: {fileID: 7508643243186186402}
   - component: {fileID: 7921516413670173798}
+  - component: {fileID: 3393038193608392771}
   m_Layer: 0
   m_Name: Orc
   m_TagString: Enemy
@@ -569,88 +569,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5317269892376271279
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8969594183803734959}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.12761688, y: 0.43686295}
-      - {x: 0.123817444, y: 0.4991951}
-      - {x: -0.0022850037, y: 0.5010643}
-      - {x: -0.12490082, y: 0.5001507}
-      - {x: -0.12495804, y: 0.43982887}
-      - {x: -0.2477827, y: 0.4415989}
-      - {x: -0.2514572, y: 0.38032532}
-      - {x: -0.31301498, y: 0.37238503}
-      - {x: -0.31270218, y: 0.31176376}
-      - {x: -0.37744522, y: 0.31424904}
-      - {x: -0.3778038, y: 0.2515278}
-      - {x: -0.43335342, y: 0.2520256}
-      - {x: -0.43681526, y: 0.18792725}
-      - {x: -0.37621307, y: 0.18838882}
-      - {x: -0.38038254, y: 0.06681061}
-      - {x: -0.43816376, y: 0.065006256}
-      - {x: -0.437706, y: 0.0011997223}
-      - {x: -0.37696457, y: 0.00058555603}
-      - {x: -0.37581635, y: -0.062473297}
-      - {x: -0.31539917, y: -0.06424141}
-      - {x: -0.31509018, y: -0.12228203}
-      - {x: -0.25085068, y: -0.12489319}
-      - {x: -0.250741, y: -0.18202782}
-      - {x: -0.31103706, y: -0.18863869}
-      - {x: -0.31306458, y: -0.24933243}
-      - {x: -0.3717785, y: -0.2540884}
-      - {x: -0.3747406, y: -0.37275505}
-      - {x: -0.31375504, y: -0.3751011}
-      - {x: -0.3107109, y: -0.43439293}
-      - {x: -0.1883316, y: -0.43720436}
-      - {x: -0.18954086, y: -0.49920464}
-      - {x: 0.18746376, y: -0.49897575}
-      - {x: 0.18737793, y: -0.44026947}
-      - {x: 0.30972958, y: -0.43120003}
-      - {x: 0.3166771, y: -0.37971115}
-      - {x: 0.37633133, y: -0.37122917}
-      - {x: 0.37306213, y: -0.2482338}
-      - {x: 0.31547928, y: -0.24560738}
-      - {x: 0.30337524, y: -0.18940544}
-      - {x: 0.24942398, y: -0.18424034}
-      - {x: 0.2255001, y: -0.3188591}
-      - {x: 0.24723244, y: -0.122587204}
-      - {x: 0.24976921, y: -0.18238163}
-      - {x: 0.27383614, y: -0.06602287}
-      - {x: 0.27528477, y: -0.0024385452}
-      - {x: 0.31236267, y: -0.12394905}
-      - {x: 0.31365204, y: -0.059833527}
-      - {x: 0.3751564, y: -0.06602001}
-      - {x: 0.36998367, y: 0.06998825}
-      - {x: 0.43572617, y: 0.06491089}
-      - {x: 0.43860245, y: 0.12364197}
-      - {x: 0.3720894, y: 0.12763023}
-      - {x: 0.37535858, y: 0.3056202}
-      - {x: 0.3096466, y: 0.3115692}
-      - {x: 0.31368828, y: 0.37712002}
-      - {x: 0.25043106, y: 0.37695503}
-      - {x: 0.2494402, y: 0.4402504}
 --- !u!114 &5353732283634312832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,9 +588,7 @@ MonoBehaviour:
   startWaitTime: 2
   chargeSeconds: 0.5
   attackAnimationTime: 0.5
-  damage: 30
   detectRange: 6
-  attackTriggerRange: 0.75
   isAttacking: 0
   inRange: 0
   speed: 3.5
@@ -680,6 +596,7 @@ MonoBehaviour:
   meleeAttackSound: {fileID: 7921516413670173798}
   player: {fileID: 0}
   hitboxPrefab: {fileID: 197775611961307479, guid: a375007e7072f5e47882e2e8ea22d009, type: 3}
+  startHitboxDistance: 1
 --- !u!114 &1811631258293320491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,12 +612,12 @@ MonoBehaviour:
   isTakingDamage: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
-  damage: 10
+  damage: 30
   xp: 0
   gold: 0
   maxHealth: 100
   currHealth: 100
-  attackRange: 6
+  attackRange: 1.5
   attackRate: 2
   healthbar: {fileID: 4910963958091383479}
   deathEffect: {fileID: 7955419532458410786, guid: 484ff8d08b8e57049b50a2c7fd3f9aec, type: 3}
@@ -902,3 +819,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &3393038193608392771
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8969594183803734959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0014743805, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.496418, y: 0.50525284}
+  m_EdgeRadius: 0
