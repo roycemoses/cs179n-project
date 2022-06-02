@@ -77,7 +77,7 @@ public class InventoryManager : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if((player.currHealth + 5 < player.equipHealth) && !isOpen)
+            if(!isOpen && player.currHealth != player.equipHealth)
             {
                 currentItem = HP;
                 UseButtonPressed();
@@ -87,7 +87,7 @@ public class InventoryManager : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if((player.currHealth + 10 < player.equipHealth) && !isOpen)
+            if(!isOpen && player.currHealth != player.equipHealth)
             {
                 currentItem = tier2HP;
                 UseButtonPressed();
@@ -97,7 +97,7 @@ public class InventoryManager : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Alpha5))
         {
-            if((player.currHealth + 20 < player.equipHealth) && !isOpen)
+            if(!isOpen && player.currHealth != player.equipHealth)
             {
                 currentItem = tier3HP;
                 UseButtonPressed();
