@@ -161,8 +161,8 @@ MonoBehaviour:
   damage: 30
   xp: 0
   gold: 0
-  maxHealth: 100
-  currHealth: 100
+  maxHealth: 300
+  currHealth: 300
   attackRange: 8
   attackRate: 1
   healthbar: {fileID: 4865207810475458725}
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargeUpDeltaTime: 0.01
   treeAttackChargeSeconds: 1
-  treeAttackMovingSeconds: 2
-  treeAttackMovementSpeed: 200
+  treeAttackMovingSeconds: 0.4
+  treeAttackMovementSpeed: 700
   treeAttackDragForceAfterMovement: 5
   treeChargeUpColor: {r: 0.078704715, g: 1, b: 0, a: 0}
   orcAttackChargeSeconds: 1
