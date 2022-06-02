@@ -417,6 +417,7 @@ MonoBehaviour:
   nextAttackTime: 0
   exitedAttackEarly: 0
   projectileSound: {fileID: 4732164963222350224}
+  player: {fileID: 0}
 --- !u!114 &7340486653551657160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ MonoBehaviour:
   isTakingDamage: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
-  damage: 5
+  damage: 10
   xp: 0
   gold: 0
   maxHealth: 100
@@ -445,6 +446,7 @@ MonoBehaviour:
   coinDelay: 0
   isDead: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isUnstoppable: 0
   takeDamageSound: {fileID: 6113096307395137315}
 --- !u!82 &4732164963222350224
 AudioSource:

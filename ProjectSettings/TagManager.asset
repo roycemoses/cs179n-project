@@ -27,7 +27,7 @@ TagManager:
   - PlayerTriggers
   - EnemyTriggers
   - Floor
-  - 
+  - EnemyNotCollide
   - 
   - 
   - 

@@ -170,4 +170,12 @@ public class TreeAttack : MonoBehaviour
             col.gameObject.GetComponent<PlayerManager>().TakeDamage(damage);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.collider.CompareTag("Player"))
+        {
+            Debug.Log("took dmg");
+            col.collider.gameObject.GetComponent<PlayerManager>().TakeDamage(damage);
+        }        
+    }
 }

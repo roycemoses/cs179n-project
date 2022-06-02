@@ -38,6 +38,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
         //We will be testing with the space key
         if (Input.GetKeyDown(KeyCode.Alpha5))
             TakeDamage(20);
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            gameObject.SetActive(false);
     }
 
     public void TakeDamage(int damage)
