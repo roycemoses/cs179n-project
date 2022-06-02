@@ -22,6 +22,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public int coinDelay;
     public bool isDead = false;
     public Color originalColor;
+    public bool isUnstoppable = false;
 
     public AudioSource takeDamageSound;
 
@@ -72,11 +73,6 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
             yield return new WaitForSeconds(invincibilityDeltaTime);
         }
         isTakingDamage = false;
-        if (GetComponent<EnemyAttack>().exitedAttackEarly)
-        {
-            GetComponent<EnemyAttack>().isAttacking = false;
-            GetComponent<EnemyAttack>().nextAttackTime = Time.time + 1f / attackRate;
-        }
         GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;      
     }
     

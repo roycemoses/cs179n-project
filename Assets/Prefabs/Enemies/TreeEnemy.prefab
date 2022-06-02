@@ -550,8 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bad3dc2960902408453ec252c213d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeUpColor: {r: 0, g: 0.026608944, b: 1, a: 0}
   surprisedSeconds: 1
   chargeSeconds: 1.5
+  chargeUpDeltaTime: 0.3
   movingSeconds: 1
   idleAfterAttackSeconds: 0.5
   speed: 250
@@ -564,6 +566,7 @@ MonoBehaviour:
   isSleeping: 1
   isSurprised: 0
   isInIdleState: 0
+  player: {fileID: 0}
 --- !u!50 &5210953306920979211
 Rigidbody2D:
   serializedVersion: 4
@@ -597,6 +600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4891a0cc9dfe03f439ee5da693e4c3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTakingDamage: 0
+  invicibilityDurationSeconds: 1
+  invincibilityDeltaTime: 0.2
   damage: 10
   xp: 0
   gold: 0
@@ -609,6 +615,8 @@ MonoBehaviour:
   coin: {fileID: 8155528959307124707, guid: 8a1c137cf9363b746870317fda8aa7f4, type: 3}
   coinDelay: 0
   isDead: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isUnstoppable: 0
   takeDamageSound: {fileID: 5489881550687546193}
 --- !u!82 &5489881550687546193
 AudioSource:
@@ -718,7 +726,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8e6fbb42900931f419b0428484772f4c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

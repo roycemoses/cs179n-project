@@ -670,12 +670,12 @@ MonoBehaviour:
   startWaitTime: 2
   chargeSeconds: 0.5
   attackAnimationTime: 0.5
-  damage: 20
-  detectRange: 8
+  damage: 30
+  detectRange: 6
   attackTriggerRange: 0.75
   isAttacking: 0
   inRange: 0
-  speed: 2.5
+  speed: 3.5
   moveSpots: []
   meleeAttackSound: {fileID: 7921516413670173798}
   player: {fileID: 0}
@@ -708,6 +708,7 @@ MonoBehaviour:
   coinDelay: 0
   isDead: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
+  isUnstoppable: 0
   takeDamageSound: {fileID: 7508643243186186402}
 --- !u!82 &7508643243186186402
 AudioSource:
