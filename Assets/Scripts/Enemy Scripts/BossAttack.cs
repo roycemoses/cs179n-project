@@ -46,6 +46,15 @@ public class BossAttack : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    void Awake()
+    {
+        StartCoroutine(ForceWait());
+    }
+    private IEnumerator ForceWait()
+    {
+        yield return new WaitForSeconds(3f); // wait so the player can get into position
+    }
+
     // Update is called once per frame
     void Update()
     {
