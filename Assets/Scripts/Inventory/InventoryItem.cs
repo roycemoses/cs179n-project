@@ -16,6 +16,7 @@ public class InventoryItem : ScriptableObject
     public bool usable;
     public bool unique;
     public UnityEvent thisEvent;
+    public Player player;
 
     private void OnEnable()
     {
@@ -24,7 +25,30 @@ public class InventoryItem : ScriptableObject
     public void Use()
     {
         Debug.Log("Using Item");
+        if(itemName == "Health Potion")
+        {
+            if (player.currHealth + 5 > player.equipHealth)
+                player.currHealth = player.equipHealth;
+            else
+                player.currHealth = player.currHealth + 5;
+            thisEvent.Invoke();
+        }
+        else if(itemName == "Tier 2 Health Potion")
+        {
+            if (player.currHealth + 10 > player.equipHealth)
+                player.currHealth = player.equipHealth;
+            else
+                player.currHealth = player.currHealth + 10; 
         thisEvent.Invoke();
+        }
+        else if(itemName == "Tier 3 Health Potion")
+        {
+            if (player.currHealth + 20 > player.equipHealth)
+                player.currHealth = player.equipHealth;
+            else
+                player.currHealth = player.currHealth + 20; 
+        thisEvent.Invoke();
+        }
     }
     
     public void updateAmount(int decrease)

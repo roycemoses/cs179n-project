@@ -12,12 +12,13 @@ public class EnemyAttack : MonoBehaviour
     bool inRange = false;
     public bool exitedAttackEarly = false;
     private Animator animator;
-
     public AudioSource projectileSound;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         projectileSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
@@ -26,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         // check if player is in enemy's attack range
-        Vector3 playerPos = GameObject.Find("Player").transform.position;
+        Vector3 playerPos = player.transform.position;
         float distance = Vector2.Distance(playerPos, transform.position);
         if (distance > GetComponent<Enemy>().attackRange)
             inRange = false;
@@ -77,7 +78,8 @@ public class EnemyAttack : MonoBehaviour
         {
             if (GetComponent<Enemy>().isTakingDamage)
             {
-                exitedAttackEarly = true;
+                isAttacking = false;
+                nextAttackTime = Time.time + 1f / GetComponent<Enemy>().attackRate;
                 GetComponent<SpriteRenderer>().color = GetComponent<Enemy>().originalColor;
                 yield break;
             }
