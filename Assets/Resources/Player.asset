@@ -15,7 +15,7 @@ MonoBehaviour:
   isInvincible: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
-  prev_scene: HomeBase
+  prev_scene: Buy_Equip_Potion
   hasInstance: 1
   damage: 25
   baseHealth: 100
@@ -27,7 +27,7 @@ MonoBehaviour:
   isDead: 1
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
-  coins: 74
+  coins: 985
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
