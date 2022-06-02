@@ -29,7 +29,7 @@ public class CheckTile : MonoBehaviour
         {
             if (tiles.GetTile(location).name == "Rural Village Terrain32_215")
             {
-                Debug.Log("On Dirt");
+                // Debug.Log("On Dirt");
                 if (player.GetComponent<PlayerMovement>().isMoving && !isPlayingDirtSound)
                 {
                     dirtSound.Play();
@@ -50,7 +50,7 @@ public class CheckTile : MonoBehaviour
 
             if (tiles.GetTile(location).name == "Rural Village Terrain32_5")
             {
-                Debug.Log("On Grass");
+                // Debug.Log("On Grass");
                 if (player.GetComponent<PlayerMovement>().isMoving && !isPlayingGrassSound)
                 {
                     grassSound.Play();
