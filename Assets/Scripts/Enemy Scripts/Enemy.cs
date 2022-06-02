@@ -19,15 +19,18 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     public EnemyHealthBar healthbar;
     public GameObject deathEffect;
     public GameObject coin;
+    public GameObject potion;
     public int coinDelay;
     public bool isDead = false;
     public Color originalColor;
     public bool isUnstoppable = false;
+    int drop;
 
     public AudioSource takeDamageSound;
 
     void Start()
     {
+        drop = Random.Range(1, 4);
         currHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         originalColor = GetComponent<SpriteRenderer>().color;
@@ -36,7 +39,7 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     void Update()
     {
         //We will be testing with the space key
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
             TakeDamage(20);
         if (Input.GetKeyDown(KeyCode.Alpha6))
             gameObject.SetActive(false);
@@ -53,7 +56,14 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
             isDead = true;
             DeathEffect();
             //CoinEffect();
+            if(drop == 1)
+            {
             Invoke("CoinEffect", 1);
+            }
+            else if(drop == 2)
+            {
+                Invoke("PotionEffect", 1);
+            }
             this.gameObject.SetActive(false);
         }
         else
@@ -91,6 +101,15 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
         if (coin != null)
         {
             GameObject effect = Instantiate(coin, transform.position, Quaternion.identity);
+            //Destroy(effect, 1f);
+        }
+    }
+
+    private void PotionEffect()
+    {
+        if (potion != null)
+        {
+            GameObject effect = Instantiate(potion, transform.position, Quaternion.identity);
             //Destroy(effect, 1f);
         }
     }

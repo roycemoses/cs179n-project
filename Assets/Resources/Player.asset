@@ -15,7 +15,11 @@ MonoBehaviour:
   isInvincible: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
+<<<<<<< HEAD
   prev_scene: FirstIslandPart2
+=======
+  prev_scene: Buy_Equip_Potion
+>>>>>>> origin/Test
   hasInstance: 1
   damage: 25
   baseHealth: 100
@@ -27,7 +31,11 @@ MonoBehaviour:
   isDead: 1
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
+<<<<<<< HEAD
   coins: 100
+=======
+  coins: 985
+>>>>>>> origin/Test
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
