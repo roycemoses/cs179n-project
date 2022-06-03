@@ -31,3 +31,4 @@ MonoBehaviour:
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
+  isPickingUpCoin: 1
