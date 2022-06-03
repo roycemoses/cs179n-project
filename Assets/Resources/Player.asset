@@ -15,19 +15,19 @@ MonoBehaviour:
   isInvincible: 0
   invicibilityDurationSeconds: 1
   invincibilityDeltaTime: 0.2
-  prev_scene: House
-  hasInstance: 0
+  prev_scene: FinalBossScene
+  hasInstance: 1
   damage: 25
   baseHealth: 100
   equipHealth: 100
-  currHealth: 85
+  currHealth: -20
   healthBar: {fileID: 9088441917954142680, guid: 2b9708f4283c83b4990436dab2ded182, type: 3}
   oldEquip: 0
   dam_red: 1
   isDead: 0
   spawnPoint: {fileID: 0}
   animator: {fileID: 0}
-  coins: 15
+  coins: 86
   coinCounterDisplay: {fileID: 0}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}

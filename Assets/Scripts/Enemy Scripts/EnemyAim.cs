@@ -19,7 +19,7 @@ public class EnemyAim : MonoBehaviour
         //     Debug.Log("angle: " + angle);
 
         position = GameObject.Find("Player").transform.position;
-        // transform.position = transform.parent.position;
+        transform.position = transform.parent.position;
     }
     
     void FixedUpdate()
