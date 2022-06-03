@@ -27,26 +27,36 @@ public class InventoryItem : ScriptableObject
         Debug.Log("Using Item");
         if(itemName == "Health Potion")
         {
-            if (player.currHealth + 5 > player.equipHealth)
-                player.currHealth = player.equipHealth;
-            else
-                player.currHealth = player.currHealth + 5;
+            if(amount > 0)
+            {
+                if (player.currHealth + 5 > player.equipHealth && amount > 0)
+                    player.currHealth = player.equipHealth;
+                else
+                    player.currHealth = player.currHealth + 5;
+            }
             thisEvent.Invoke();
         }
         else if(itemName == "Tier 2 Health Potion")
         {
-            if (player.currHealth + 10 > player.equipHealth)
-                player.currHealth = player.equipHealth;
-            else
-                player.currHealth = player.currHealth + 10; 
-        thisEvent.Invoke();
+            if(amount > 0)
+            {
+                if (player.currHealth + 10 > player.equipHealth&& amount > 0)
+                    player.currHealth = player.equipHealth;
+                else
+                    player.currHealth = player.currHealth + 10; 
+            }
+            thisEvent.Invoke();
         }
         else if(itemName == "Tier 3 Health Potion")
         {
-            if (player.currHealth + 20 > player.equipHealth)
-                player.currHealth = player.equipHealth;
-            else
-                player.currHealth = player.currHealth + 20; 
+            if(amount > 0)
+            {
+                if (player.currHealth + 20 > player.equipHealth)
+                    player.currHealth = player.equipHealth;
+                else
+                    player.currHealth = player.currHealth + 20; 
+            }
+            
         thisEvent.Invoke();
         }
     }

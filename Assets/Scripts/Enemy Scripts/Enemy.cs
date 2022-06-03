@@ -39,8 +39,8 @@ public abstract class Enemy : MonoBehaviour//perhaps abstract
     void Update()
     {
         //We will be testing with the space key
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-            TakeDamage(20);
+        // if (Input.GetKeyDown(KeyCode.Alpha0))
+        //     TakeDamage(20);
         if (Input.GetKeyDown(KeyCode.Alpha6))
             gameObject.SetActive(false);
     }
