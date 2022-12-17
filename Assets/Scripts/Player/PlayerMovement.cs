@@ -16,10 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public VectorValue startingPosition;
 
+    public bool isMoving;
+
     void Start()
     {
         animator = GetComponent<Animator>();
-        transform.position = startingPosition.initialValue;
+        // transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -47,8 +49,15 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         if (movement != Vector2.zero)
+        {
             animator.SetBool("isMoving", true);
+            isMoving = true;
+        }
         else
+        {
             animator.SetBool("isMoving", false);
+            isMoving = false;
+        }
     }
+
 }

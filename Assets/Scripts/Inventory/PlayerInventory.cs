@@ -8,4 +8,9 @@ using UnityEngine;
 public class PlayerInventory : ScriptableObject
 {
     public List<InventoryItem> myInventory = new List<InventoryItem>();
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }
