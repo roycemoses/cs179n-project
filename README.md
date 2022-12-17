@@ -7,6 +7,8 @@ Drack's Adventures is a 2D rogue-lite RPG. View a trailer for the game [here](ht
 ## Usage
 This game is made using Unity Version 2020.3.32f1. Please have this version installed/enabled if you would like to make changes.
 
+Visit Unity's archive page to find the correct editor version: https://unity.com/releases/editor/archive
+
 ### Installation / Development
 - Download this repo as a ZIP file
 - Extract all contents into a folder
