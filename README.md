@@ -4,6 +4,12 @@ Drack's Adventures follows the game's namesake as he fights to restore the envir
 ## About
 Drack's Adventures is a 2D rogue-lite RPG. View a trailer for the game [here](https://www.youtube.com/watch?v=04vsDuNmY-I).
 
+<img src="https://raw.github.com/roycemoses/cs179n-project/main/Screenshots/Screenshot&#32;2022-12-17&#32;152615.png">
+<img src="https://raw.github.com/roycemoses/cs179n-project/main/Screenshots/Screenshot&#32;2022-12-17&#32;152854.png">
+<img src="https://raw.github.com/roycemoses/cs179n-project/main/Screenshots/Screenshot&#32;2022-12-17&#32;153017.png">
+<img src="https://raw.github.com/roycemoses/cs179n-project/main/Screenshots/Screenshot&#32;2022-12-17&#32;153130.png">
+<img src="https://raw.github.com/roycemoses/cs179n-project/main/Screenshots/Screenshot&#32;2022-12-17&#32;153148.png">
+
 ## Usage
 This game is made using Unity Version 2020.3.32f1. Please have this version installed/enabled if you would like to make changes.
 
